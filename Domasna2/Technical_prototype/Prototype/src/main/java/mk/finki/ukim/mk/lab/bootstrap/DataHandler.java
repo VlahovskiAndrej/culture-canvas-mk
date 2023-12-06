@@ -31,7 +31,7 @@ public class DataHandler {
 
     private static List<String[]> readCsvFile() {
         List<String[]> data = new ArrayList<>();
-        try (CSVReader reader = new CSVReader(new InputStreamReader(new FileInputStream("C:\\Users\\Andrej\\Desktop\\FINKI\\Semestar_5\\DIANS\\Prototype - DIANS\\lab\\src\\main\\resources\\database\\data.csv"), StandardCharsets.UTF_8))) {
+        try (CSVReader reader = new CSVReader(new InputStreamReader(new FileInputStream("src/main/resources/database/data.csv"), StandardCharsets.UTF_8))) {
             data = reader.readAll();
         } catch (IOException | CsvException e) {
             e.printStackTrace();
