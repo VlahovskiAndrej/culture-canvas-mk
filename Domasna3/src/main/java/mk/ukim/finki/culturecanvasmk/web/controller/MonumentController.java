@@ -9,9 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 
 @Controller
 //@RestController
@@ -64,6 +62,23 @@ public class MonumentController {
         model.addAttribute("monument", monument.get());
 
         return "monumentDetails";
+    }
+
+    @GetMapping("/map")
+    public String getMap(Model model) {
+        model.addAttribute("monuments", monumentService.listAllPlaces());
+        return "osm";
+    }
+
+    @PostMapping("/map")
+    public String getFilteredMap(@RequestParam(required = false) Double distance,
+                                 @RequestParam(required = false) Double latitude,
+                                 @RequestParam(required = false) Double longitude,
+                                 Model model) {
+        model.addAttribute("monuments", monumentService.filterByDistance(latitude, longitude, distance));
+        model.addAttribute("userLatitude", latitude);
+        model.addAttribute("userLongitude", longitude);
+        return "osm";
     }
 
 }

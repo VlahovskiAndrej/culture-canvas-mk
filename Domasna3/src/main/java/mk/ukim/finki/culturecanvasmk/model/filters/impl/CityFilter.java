@@ -2,8 +2,7 @@ package mk.ukim.finki.culturecanvasmk.model.filters.impl;
 
 import mk.ukim.finki.culturecanvasmk.model.filters.Filter;
 
-public class CityFilter implements Filter<String>
-{
+public class CityFilter implements Filter<String> {
 
     @Override
     public String execute(String input) {
