@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 
@@ -22,7 +23,7 @@ public class DataHandler {
     public static List<Monument> monumentList;
 
     @PostConstruct
-    public void init(){
+    public void init() {
         csvData = readCsvFile();
 
 //    name,nameEn,region,city,municipality,postcode,suburb,lat,lon,address,,,,,,
@@ -39,8 +40,6 @@ public class DataHandler {
         }
         return data;
     }
-
-
 
 
 }

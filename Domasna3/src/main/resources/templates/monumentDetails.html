@@ -2,76 +2,88 @@
 <html>
 <head>
 
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <title>CultureCanvasMK - Home</title>
-  <style type="text/css">
-    body {
-      margin: 22px;
-      /*background: lightgray;*/
-    }
-    #box{
-      border: 1px solid black;
-      padding: 7px;
-      border-radius: 7px;
-      /*margin-left: -40px;*/
-    }
-    #searchMonuments{
-      /*margin: 5px;*/
-      padding: 5px 15px;
-      border-radius: 12px;
-      border: 1px solid black;
-      width: 80%;
-    }
-    #citySelect{
-      /*margin: 5px;*/
-      padding: 5px;
-      border-radius: 12px;
-      border: 1px solid black;
-      width: 19.5%;
-    }
-    #submit-btn{
-      margin: 7px 0;
-      width: 100%;
-      border-radius: 12px;
-      border: 1px solid black;
-      margin-bottom: 20px;
-      background: lightblue;
-    }
-    #submit-btn:hover{
-      background: lightskyblue;
-    }
+    <title>CultureCanvasMK - Home</title>
+    <style type="text/css">
+        body {
+            margin: 22px;
+            /*background: lightgray;*/
+        }
+
+        #box {
+            border: 1px solid black;
+            padding: 7px;
+            border-radius: 7px;
+            /*margin-left: -40px;*/
+        }
+
+        #searchMonuments {
+            /*margin: 5px;*/
+            padding: 5px 15px;
+            border-radius: 12px;
+            border: 1px solid black;
+            width: 80%;
+        }
+
+        #citySelect {
+            /*margin: 5px;*/
+            padding: 5px;
+            border-radius: 12px;
+            border: 1px solid black;
+            width: 19.5%;
+        }
+
+        #submit-btn {
+            margin: 7px 0;
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid black;
+            margin-bottom: 20px;
+            background: lightblue;
+        }
+
+        #submit-btn:hover {
+            background: lightskyblue;
+        }
 
 
-  </style>
+    </style>
 </head>
 
 <body>
 <header>
-  <h1 th:text="${monument.getNameMk()}"></h1>
+    <h1 th:text="${monument.getNameMk()}"></h1>
 </header>
 <main>
     <div id="box">
-      <h3 th:text="'NameEN: ' + ${monument.getNameEn()}"> </h3>
-      <h4 th:text="'City: ' + ${monument.getCity()}"></h4>
-      <h5 th:text="'Region: ' + ${monument.getRegion()}"></h5>
-      <h5 th:text="'Municipality: ' + ${monument.getMunicipality()}"></h5>
-      <h5 th:text="'Suburb: ' + ${monument.getSuburb()}"></h5>
-      <h5 th:text="'Longitude: ' + ${monument.getLongitude()}"></h5>
-      <h5 th:text="'Lattitude: ' + ${monument.getLatitude()}"></h5>
-      <h5 th:text="'Address: ' + ${monument.getAddress()}"></h5>
+        <h3 th:text="'NameEN: ' + ${monument.getNameEn()}"></h3>
+        <h4 th:text="'City: ' + ${monument.getCity()}"></h4>
+        <h5 th:text="'Region: ' + ${monument.getRegion()}"></h5>
+        <h5 th:text="'Municipality: ' + ${monument.getMunicipality()}"></h5>
+        <h5 th:text="'Suburb: ' + ${monument.getSuburb()}"></h5>
+        <h5 th:text="'Longitude: ' + ${monument.getLongitude()}"></h5>
+        <h5 th:text="'Lattitude: ' + ${monument.getLatitude()}"></h5>
+        <h5 th:text="'Address: ' + ${monument.getAddress()}"></h5>
 
     </div>
 
 </main>
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 </html>
