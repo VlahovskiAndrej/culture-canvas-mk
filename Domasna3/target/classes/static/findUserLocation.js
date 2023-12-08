@@ -1,6 +1,6 @@
 if ("geolocation" in navigator) {
     // Get current position
-    navigator.geolocation.getCurrentPosition(function(position) {
+    navigator.geolocation.getCurrentPosition(function (position) {
         var latitude = position.coords.latitude;
         var longitude = position.coords.longitude;
 
@@ -12,9 +12,9 @@ if ("geolocation" in navigator) {
         // Here, you can perform further actions with the obtained coordinates
         // For example, you can make an AJAX request to send the coordinates to the server
         // or display the location on a map.
-    }, function(error) {
+    }, function (error) {
         // Handle error cases
-        switch(error.code) {
+        switch (error.code) {
             case error.PERMISSION_DENIED:
                 console.log("User denied the request for geolocation.");
                 break;
