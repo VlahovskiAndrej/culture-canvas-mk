@@ -57,10 +57,10 @@
 </head>
 
 <body>
-<header>
-    <h1 th:text="${monument.getNameMk()}"></h1>
-</header>
-<div>
+<div class="container jumbotron">
+    <header>
+        <h1 th:text="${monument.getNameMk()}"></h1>
+    </header>
     <div id="box">
         <h3 th:text="'NameEN: ' + ${monument.getNameEn()}"></h3>
         <h4 th:text="'City: ' + ${monument.getCity()}"></h4>
