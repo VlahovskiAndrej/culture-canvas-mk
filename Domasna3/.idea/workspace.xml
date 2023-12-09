@@ -5,23 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ae06e9d-595d-4186-8126-d22306b2fa09" name="Changes" comment="Database added">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/07131d7f-04d3-4b05-b5a4-fe7ea73fb1c6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/07131d7f-04d3-4b05-b5a4-fe7ea73fb1c6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/listMonuments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/listMonuments.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/osm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/osm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/bootstrap/DataHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/bootstrap/DataHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/DistanceCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/DistanceCalculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/exceptions/MonumentNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/exceptions/MonumentNotFoundException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/Filter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/Filter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/Pipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/Pipe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/impl/CityFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/impl/CityFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/repository/InMemoryMonumentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/repository/InMemoryMonumentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/repository/jpa/MonumentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/repository/jpa/MonumentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/Impl/MonumentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/Impl/MonumentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/MonumentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/MonumentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/findUserLocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/findUserLocation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/listMonuments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/listMonuments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/monumentDetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/monumentDetails.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/osm.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/osm.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,18 +57,38 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
   <component name="ProjectId" id="2ZB2tOlj79ldDF5M2zk8hssIu52" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.CultureCanvasMkApplication.executor": "Run",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
   <component name="RunManager" selected="Spring Boot.CultureCanvasMkApplication">
     <configuration name="CultureCanvasMkApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="19" />
@@ -108,6 +120,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-3183f394aec4-f0552fc0" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -119,6 +138,7 @@
       <workItem from="1701881369796" duration="3632000" />
       <workItem from="1701892145756" duration="9990000" />
       <workItem from="1701961357457" duration="5708000" />
+      <workItem from="1702123663385" duration="2626000" />
     </task>
     <servers />
   </component>

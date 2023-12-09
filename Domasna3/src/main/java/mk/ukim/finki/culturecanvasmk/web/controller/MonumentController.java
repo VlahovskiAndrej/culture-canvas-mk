@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @Controller
-//@RestController
 @RequestMapping("/monuments")
 public class MonumentController {
 
@@ -21,15 +20,6 @@ public class MonumentController {
     public MonumentController(MonumentService monumentService) {
         this.monumentService = monumentService;
     }
-
-//    @GetMapping
-//    public ResponseEntity<String> getMonuments(Model model) {
-//
-//        List<String[]> monuments = monumentService.listAllPlaces();
-//        model.addAttribute("monuments", monuments);
-//
-//        return new ResponseEntity<String>(monuments, HttpStatus.OK);
-//    }
 
 
     @GetMapping

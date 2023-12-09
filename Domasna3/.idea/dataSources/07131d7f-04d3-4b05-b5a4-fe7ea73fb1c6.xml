@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="culturecanvas@localhost">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.49">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.51">
     <root id="1">
       <DateStyle>dmy</DateStyle>
       <Grants>1||-9223372036854775808|c|G
@@ -4256,8 +4256,7 @@ false Zulu
       <Comment>standard public schema</Comment>
       <Current>1</Current>
       <IntrospectionStateNumber>879</IntrospectionStateNumber>
-      <IntrospectionTimestamp>2023-12-06.21:21:01.348</IntrospectionTimestamp>
-      <LocalIntrospectionTimestamp>2023-12-06.20:21:02</LocalIntrospectionTimestamp>
+      <LastIntrospectionLocalTimestamp>2023-12-06.20:21:02</LastIntrospectionLocalTimestamp>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -4265,7 +4264,7 @@ false Zulu
     <sequence id="268" parent="267" name="monument_id_seq">
       <DasType>bigint|0s</DasType>
       <ObjectId>16649</ObjectId>
-      <SequenceIdentity>1(985)</SequenceIdentity>
+      <SequenceIdentity>1</SequenceIdentity>
       <StartValue>1</StartValue>
       <StateNumber>874</StateNumber>
       <OwnerName>dians</OwnerName>
