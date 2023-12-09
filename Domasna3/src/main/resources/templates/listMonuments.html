@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,11 +10,6 @@
 
     <title>CultureCanvasMK - Home</title>
     <style type="text/css">
-        body {
-            margin: 22px;
-            /*background: lightgray;*/
-        }
-
         #box {
             border: 1px solid black;
             padding: 7px;
@@ -40,11 +34,10 @@
         }
 
         #submit-btn {
-            margin: 7px 0;
             width: 100%;
             border-radius: 12px;
             border: 1px solid black;
-            margin-bottom: 20px;
+            margin: 7px 0 20px;
             background: lightblue;
         }
 
@@ -56,58 +49,56 @@
     </style>
 </head>
 
-<body>
-<header>
+<div class="container">
     <h1>CultureCanvasMK - Historical Places in Macedonia</h1>
-</header>
-<main>
+    <div>
 
-    <!--______SEARCH BAR______-->
-    <form th:method="POST" th:action="@{/monuments}">
-        <input type="text" name="searchMonuments" id="searchMonuments" placeholder="Search...">
+        <!--______SEARCH BAR______-->
+        <form th:method="POST" th:action="@{/monuments}">
+            <input type="text" name="searchMonuments" id="searchMonuments" placeholder="Search...">
 
-        <select name="city" id="citySelect">
-            <option value="All" selected>All</option>
-            <option value="Skopje">Skopje</option>
-            <option value="Bitola">Bitola</option>
-            <option value="Prilep">Prilep</option>
-            <option value="Tetovo">Tetovo</option>
-            <option value="Ohrid">Ohrid</option>
-        </select>
-        <br>
-        <input type="submit" value="Submit" id="submit-btn">
-    </form>
+            <select name="city" id="citySelect">
+                <option value="All" selected>All</option>
+                <option value="Skopje">Skopje</option>
+                <option value="Bitola">Bitola</option>
+                <option value="Prilep">Prilep</option>
+                <option value="Tetovo">Tetovo</option>
+                <option value="Ohrid">Ohrid</option>
+            </select>
+            <br>
+            <input type="submit" value="Submit" id="submit-btn">
+        </form>
 
-    <ul th:each="monument : ${monuments}">
-        <div id="box">
+        <div>
+            <ul th:each="monument : ${monuments}">
+                <div id="box">
 
-            <!--      //     0     1     2     3           4        5     6    7       8           9       10     11     12  13    14         15            16        17    18-->
-            <!--      //    type,name,nameEn,country,country_code,state,county,city,municipality,postcode,suburb,street,lon,lat,formatted,addressLine1,addressLine2,osmId,wikiData-->
+                    <!--      //     0     1     2     3           4        5     6    7       8           9       10     11     12  13    14         15            16        17    18-->
+                    <!--      //    type,name,nameEn,country,country_code,state,county,city,municipality,postcode,suburb,street,lon,lat,formatted,addressLine1,addressLine2,osmId,wikiData-->
 
-            <h3 th:text="${monument.getNameMk()}"></h3>
-            <h4 th:text="'City: ' + ${monument.getCity()}"></h4>
-            <h5 th:text="'Location: ' + ${monument.getAddress()}"></h5>
+                    <h3 th:text="${monument.getNameMk()}"></h3>
+                    <h4 th:text="'City: ' + ${monument.getCity()}"></h4>
+                    <h5 th:text="'Location: ' + ${monument.getAddress()}"></h5>
 
-            <form th:action="@{'/monuments/{id}' (id=${monument.getId()})}" th:method="GET">
-                <input type="submit" value="Read more">
-            </form>
-
+                    <form th:action="@{'/monuments/{id}' (id=${monument.getId()})}" th:method="GET">
+                        <input type="submit" value="Read more">
+                    </form>
+                </div>
+            </ul>
 
         </div>
-    </ul>
+
+    </div>
 
 
-</main>
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</div>
 </html>

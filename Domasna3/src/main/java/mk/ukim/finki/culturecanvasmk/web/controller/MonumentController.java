@@ -38,7 +38,8 @@ public class MonumentController {
         List<Monument> monuments = monumentService.listAllPlaces();
         model.addAttribute("monuments", monuments);
 
-        return "listMonuments";
+        model.addAttribute("bodyContent", "listMonuments");
+        return "master-template";
     }
 
 
@@ -50,7 +51,8 @@ public class MonumentController {
             monuments = monumentService.filterByCity(city);
 
         model.addAttribute("monuments", monuments);
-        return "listMonuments";
+        model.addAttribute("bodyContent", "listMonuments");
+        return "master-template";
     }
 
     @GetMapping("/{id}")
@@ -60,14 +62,15 @@ public class MonumentController {
         if (monument.isEmpty())
             throw new MonumentNotFoundException(id);
         model.addAttribute("monument", monument.get());
-
-        return "monumentDetails";
+        model.addAttribute("bodyContent", "monumentDetails");
+        return "master-template";
     }
 
     @GetMapping("/map")
     public String getMap(Model model) {
         model.addAttribute("monuments", monumentService.listAllPlaces());
-        return "osm";
+        model.addAttribute("bodyContent", "osm");
+        return "master-template";
     }
 
     @PostMapping("/map")
@@ -78,7 +81,8 @@ public class MonumentController {
         model.addAttribute("monuments", monumentService.filterByDistance(latitude, longitude, distance));
         model.addAttribute("userLatitude", latitude);
         model.addAttribute("userLongitude", longitude);
-        return "osm";
+        model.addAttribute("bodyContent", "osm");
+        return "master-template";
     }
 
 }
