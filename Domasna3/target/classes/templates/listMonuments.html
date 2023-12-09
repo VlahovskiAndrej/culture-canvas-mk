@@ -11,7 +11,7 @@
 
     <title>CultureCanvasMK - Home</title>
     <style type="text/css">
-        body {
+        #body-container {
             margin: 22px;
             /*background: lightgray;*/
         }
@@ -52,15 +52,51 @@
             background: lightskyblue;
         }
 
+        #nav-bar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #f4f1ed;
+        }
+
+        .nav-bar-li {
+            float: left;
+        }
+
+        .nav-bar-li a {
+            color: #111111;
+            display: block;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Change the link color to #111 (black) on hover */
+        .nav-bar-li a:hover {
+            text-decoration: underline;
+        }
+
+        .selected{
+            text-decoration: underline;
+        }
 
     </style>
 </head>
 
 <body>
-<header>
+
+    <!--NAV BAR-->
+    <ul id="nav-bar">
+        <li class="nav-bar-li"><a href="#">Home</a></li>
+        <li class="nav-bar-li"><a href="http://localhost:8080/monuments/map">Map</a></li>
+        <li class="nav-bar-li selected"><a href="http://localhost:8080/monuments">Destinations</a></li>
+        <li class="nav-bar-li"><a href="#">About</a></li>
+        <li class="nav-bar-li"><a href="#">Contact</a></li>
+    </ul>
+
+<div id="body-container">
     <h1>CultureCanvasMK - Historical Places in Macedonia</h1>
-</header>
-<main>
 
     <!--______SEARCH BAR______-->
     <form th:method="POST" th:action="@{/monuments}">
@@ -74,6 +110,7 @@
             <option value="Tetovo">Tetovo</option>
             <option value="Ohrid">Ohrid</option>
         </select>
+
         <br>
         <input type="submit" value="Submit" id="submit-btn">
     </form>
@@ -95,9 +132,7 @@
 
         </div>
     </ul>
-
-
-</main>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -59,5 +59,10 @@ public class MonumentServiceImpl implements MonumentService {
                 .collect(Collectors.toList());
     }
 
+    public void saveMonument(){
+        
+    }
+
+
 
 }
