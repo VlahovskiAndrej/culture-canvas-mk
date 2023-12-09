@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
-        #body-container {
+        body {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -32,75 +32,33 @@
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
         }
-
-        #nav-bar {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #f4f1ed;
-        }
-
-        .nav-bar-li {
-            float: left;
-        }
-
-        .nav-bar-li a {
-            color: #111111;
-            display: block;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        .nav-bar-li a:hover {
-            text-decoration: underline;
-        }
-
-        .selected{
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
-
-<!--NAV BAR-->
-<ul id="nav-bar">
-    <li class="nav-bar-li"><a href="#">Home</a></li>
-    <li class="nav-bar-li selected"><a href="http://localhost:8080/monuments/map">Map</a></li>
-    <li class="nav-bar-li"><a href="http://localhost:8080/monuments">Destinations</a></li>
-    <li class="nav-bar-li"><a href="#">About</a></li>
-    <li class="nav-bar-li"><a href="#">Contact</a></li>
-</ul>
-
-<div id="body-container">
-    <div class="container" id="map-container">
-        <h1 class="mt-3 mb-4">Find your destination</h1>
-        <div class="row">
-            <div class="col-md-8">
-                <div id="map" style="height: 600px;"></div>
-            </div>
-            <div class="col-md-4">
-                <div id="filterPart" class="mt-3">
-                    <form th:method="POST" th:action="@{/monuments/map}" id="filterForm" class="form-inline">
-                        <p>Map of monuments</p>
-                        <div class="form-group">
-                            <label for="distance">Enter distance (km)</label>
-                        </div>
-                        <div>
-                            <input id="distance" type="number" name="distance" class="form-control">
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="searchButton">Search</button>
-                        <input id="latitude" type="hidden" name="latitude">
-                        <input id="longitude" type="hidden" name="longitude">
-                    </form>
-                </div>
+<div class="container" id="map-container">
+    <h1 class="mt-3 mb-4">Find your destination</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <div id="map" style="height: 600px;"></div>
+        </div>
+        <div class="col-md-4">
+            <div id="filterPart" class="mt-3">
+                <form th:method="POST" th:action="@{/monuments/map}" id="filterForm" class="form-inline">
+                    <p>Map of monuments</p>
+                    <div class="form-group">
+                        <label for="distance">Enter distance (km)</label>
+                    </div>
+                    <div>
+                        <input id="distance" type="number" name="distance" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="searchButton">Search</button>
+                    <input id="latitude" type="hidden" name="latitude">
+                    <input id="longitude" type="hidden" name="longitude">
+                </form>
             </div>
         </div>
     </div>
 </div>
-
-
 
 <script th:inline="javascript">
     var map = L.map('map').setView([41.6086, 21.7453], 8);
