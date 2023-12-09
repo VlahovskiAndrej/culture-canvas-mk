@@ -11,10 +11,10 @@
 
     <title>CultureCanvasMK - Home</title>
     <style type="text/css">
-        body {
-            margin: 22px;
-            /*background: lightgray;*/
-        }
+        /*body {*/
+        /*    margin: 0 10px 10px;*/
+        /*    !*background: lightgray;*!*/
+        /*}*/
 
         #box {
             border: 1px solid black;
@@ -56,11 +56,11 @@
     </style>
 </head>
 
-<body>
-<header>
-    <h1>CultureCanvasMK - Historical Places in Macedonia</h1>
-</header>
-<main>
+<section>
+
+<h1>CultureCanvasMK - Historical Places in Macedonia</h1>
+
+<div>
 
     <!--______SEARCH BAR______-->
     <form th:method="POST" th:action="@{/monuments}">
@@ -78,26 +78,28 @@
         <input type="submit" value="Submit" id="submit-btn">
     </form>
 
-    <ul th:each="monument : ${monuments}">
-        <div id="box">
+    <div>
+        <ul th:each="monument : ${monuments}">
+            <div id="box">
 
-            <!--      //     0     1     2     3           4        5     6    7       8           9       10     11     12  13    14         15            16        17    18-->
-            <!--      //    type,name,nameEn,country,country_code,state,county,city,municipality,postcode,suburb,street,lon,lat,formatted,addressLine1,addressLine2,osmId,wikiData-->
+                <!--      //     0     1     2     3           4        5     6    7       8           9       10     11     12  13    14         15            16        17    18-->
+                <!--      //    type,name,nameEn,country,country_code,state,county,city,municipality,postcode,suburb,street,lon,lat,formatted,addressLine1,addressLine2,osmId,wikiData-->
 
-            <h3 th:text="${monument.getNameMk()}"></h3>
-            <h4 th:text="'City: ' + ${monument.getCity()}"></h4>
-            <h5 th:text="'Location: ' + ${monument.getAddress()}"></h5>
+                <h3 th:text="${monument.getNameMk()}"></h3>
+                <h4 th:text="'City: ' + ${monument.getCity()}"></h4>
+                <h5 th:text="'Location: ' + ${monument.getAddress()}"></h5>
 
-            <form th:action="@{'/monuments/{id}' (id=${monument.getId()})}" th:method="GET">
-                <input type="submit" value="Read more">
-            </form>
-
-
-        </div>
-    </ul>
+                <form th:action="@{'/monuments/{id}' (id=${monument.getId()})}" th:method="GET">
+                    <input type="submit" value="Read more">
+                </form>
 
 
-</main>
+            </div>
+        </ul>
+
+    </div>
+
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -109,5 +111,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-</body>
+</section>
 </html>

@@ -12,7 +12,7 @@
     <title>CultureCanvasMK - Home</title>
     <style type="text/css">
         body {
-            margin: 22px;
+            margin: 10px;
             /*background: lightgray;*/
         }
 
@@ -60,7 +60,7 @@
 <header>
     <h1 th:text="${monument.getNameMk()}"></h1>
 </header>
-<main>
+<div>
     <div id="box">
         <h3 th:text="'NameEN: ' + ${monument.getNameEn()}"></h3>
         <h4 th:text="'City: ' + ${monument.getCity()}"></h4>
@@ -73,7 +73,7 @@
 
     </div>
 
-</main>
+</div>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
