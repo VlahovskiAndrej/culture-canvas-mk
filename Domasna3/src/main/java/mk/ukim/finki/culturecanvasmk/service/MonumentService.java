@@ -7,6 +7,8 @@ import java.util.Optional;
 
 public interface MonumentService {
 
+    Monument findById(Long id);
+
     List<Monument> listAllPlaces();
 
     List<Monument> searchByName(String name);
@@ -20,6 +22,10 @@ public interface MonumentService {
     List<Double> getLongitudes();
 
     List<Monument> filterByDistance(Double latFrom, Double lngFrom, Double distance);
+
+    void deleteById(Long id);
+    void saveMonument(String nameMk, String nameEn, String city, String region, String municipality, String suburb, String longitude, String latitude, String address, long id);
+
 
 }
 

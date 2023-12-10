@@ -5,19 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ae06e9d-595d-4186-8126-d22306b2fa09" name="Changes" comment="Added header, footer and initial pages">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/addMonument.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/07131d7f-04d3-4b05-b5a4-fe7ea73fb1c6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/07131d7f-04d3-4b05-b5a4-fe7ea73fb1c6/storage_v2/_src_/database/culturecanvas.hlB71Q.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/07131d7f-04d3-4b05-b5a4-fe7ea73fb1c6/storage_v2/_src_/database/culturecanvas.hlB71Q/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/07131d7f-04d3-4b05-b5a4-fe7ea73fb1c6/storage_v2/_src_/database/culturecanvas.hlB71Q/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/07131d7f-04d3-4b05-b5a4-fe7ea73fb1c6/storage_v2/_src_/database/culturecanvas.hlB71Q/schema/public.abK9xQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/bootstrap/DataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/bootstrap/DataHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/model/ThymeleafConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/model/config/ThymeleafConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/repository/InMemoryMonumentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/repository/jpa/MonumentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/repository/jpa/MonumentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/service/Impl/MonumentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/service/Impl/MonumentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/service/MonumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/service/MonumentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/listMonuments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/listMonuments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/master-template.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/master-template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/osm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/osm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/listMonuments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/listMonuments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/osm.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/osm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/bootstrap/DataHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/bootstrap/DataHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/DistanceCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/DistanceCalculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/exceptions/MonumentNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/exceptions/MonumentNotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/Filter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/Filter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/Pipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/Pipe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/impl/CityFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/impl/CityFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/repository/InMemoryMonumentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/repository/jpa/MonumentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/repository/jpa/MonumentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/Impl/MonumentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/Impl/MonumentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/MonumentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/MonumentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,8 +48,9 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -61,23 +81,45 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2ZB2tOlj79ldDF5M2zk8hssIu52" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/fragments" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "Spring Boot.CultureCanvasMkApplication.executor": "Run",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\panci\Desktop\DIANS\Domasna3\src\main\resources\templates\fragments" />
       <recent name="C:\Users\panci\Desktop\DIANS\Domasna3\src\main\resources\templates" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Andrej\Desktop\Git-Clones\DIANS\Domasna3\src\main\java\mk\ukim\finki\culturecanvasmk\model\config" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="mk.ukim.finki.culturecanvasmk.web.controller" />
@@ -114,6 +156,13 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-3183f394aec4-f0552fc0" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -125,6 +174,9 @@
       <workItem from="1701881369796" duration="3632000" />
       <workItem from="1701892145756" duration="9990000" />
       <workItem from="1701961357457" duration="5708000" />
+      <workItem from="1702212315286" duration="8141000" />
+      <workItem from="1702222972104" duration="4063000" />
+      <workItem from="1702229210462" duration="7641000" />
     </task>
     <task id="LOCAL-00001" summary="Added header, footer and initial pages">
       <created>1702086589307</created>
@@ -153,6 +205,22 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added header, footer and initial pages" />
     <option name="LAST_COMMIT_MESSAGE" value="Added header, footer and initial pages" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/service/Impl/MonumentServiceImpl.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CultureCanvasMK$CultureCanvasMkApplication.ic" NAME="CultureCanvasMkApplication Coverage Results" MODIFIED="1702078106293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

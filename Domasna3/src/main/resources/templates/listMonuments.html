@@ -36,13 +36,17 @@
         #submit-btn {
             width: 100%;
             border-radius: 12px;
-            border: 1px solid black;
+            /*border: 1px solid black;*/
             margin: 7px 0 20px;
-            background: lightblue;
+            /*background: lightblue;*/
         }
 
-        #submit-btn:hover {
-            background: lightskyblue;
+        #button-div{
+            display: flex;
+        }
+
+        #button-div input{
+            margin: 0 3px;
         }
 
 
@@ -66,7 +70,7 @@
                 <option value="Ohrid">Ohrid</option>
             </select>
             <br>
-            <input type="submit" value="Submit" id="submit-btn">
+            <input class="btn btn-primary" type="submit" value="Submit" id="submit-btn">
         </form>
 
         <div>
@@ -80,9 +84,21 @@
                     <h4 th:text="'City: ' + ${monument.getCity()}"></h4>
                     <h5 th:text="'Location: ' + ${monument.getAddress()}"></h5>
 
-                    <form th:action="@{'/monuments/{id}' (id=${monument.getId()})}" th:method="GET">
-                        <input type="submit" value="Read more">
-                    </form>
+                    <div id="button-div">
+                        <form th:action="@{'/monuments/{id}' (id=${monument.getId()})}" th:method="GET">
+                            <input class="btn btn-secondary" type="submit" value="Read more">
+                        </form>
+
+                        <form th:if="${session.role eq 'ADMIN'}" th:action="@{'/monuments/{id}/edit' (id=${monument.getId()})}" th:method="GET">
+                            <input class="btn btn-primary" type="submit" value="Edit">
+                        </form>
+
+                        <form th:if="${session.role eq 'ADMIN'}" th:action="@{'/monuments/{id}/delete' (id=${monument.getId()})}" th:method="GET">
+                            <input class="btn btn-danger" type="submit" value="Delete">
+                        </form>
+                    </div>
+
+
                 </div>
             </ul>
 

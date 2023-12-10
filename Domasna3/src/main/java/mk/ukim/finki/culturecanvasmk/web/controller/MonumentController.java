@@ -1,6 +1,7 @@
 package mk.ukim.finki.culturecanvasmk.web.controller;
 
 
+import jakarta.servlet.http.HttpSession;
 import mk.ukim.finki.culturecanvasmk.model.Monument;
 import mk.ukim.finki.culturecanvasmk.model.exceptions.MonumentNotFoundException;
 import mk.ukim.finki.culturecanvasmk.service.InsertDataService;
@@ -22,18 +23,11 @@ public class MonumentController {
         this.monumentService = monumentService;
     }
 
-//    @GetMapping
-//    public ResponseEntity<String> getMonuments(Model model) {
-//
-//        List<String[]> monuments = monumentService.listAllPlaces();
-//        model.addAttribute("monuments", monuments);
-//
-//        return new ResponseEntity<String>(monuments, HttpStatus.OK);
-//    }
-
-
     @GetMapping
-    public String getMonuments(Model model) {
+    public String getMonuments(Model model, HttpSession session) {
+
+        String role = (String) session.getAttribute("role");
+        model.addAttribute("role", role);
 
         List<Monument> monuments = monumentService.listAllPlaces();
         model.addAttribute("monuments", monuments);
@@ -83,6 +77,51 @@ public class MonumentController {
         model.addAttribute("userLongitude", longitude);
         model.addAttribute("bodyContent", "osm");
         return "master-template";
+    }
+
+    @GetMapping("/{id}/delete")
+    public String deleteMonument(@PathVariable long id,HttpSession session, Model model){
+
+        if (session.getAttribute("role") != "ADMIN")
+            return "redirect:/monuments";
+
+        monumentService.deleteById(id);
+        return "redirect:/monuments";
+    }
+
+    @GetMapping("/{id}/edit")
+    public String getEditPage(@PathVariable long id, HttpSession session, Model model){
+
+        if (!Objects.equals((String) session.getAttribute("role"), "ADMIN"))
+            return "redirect:/monuments";
+
+        model.addAttribute("monument", monumentService.findById(id));
+        return "addMonument";
+    }
+
+    @PostMapping("/save")
+    public String saveMonument(String nameMk,
+                               String nameEn,
+                               String city,
+                               String region,
+                               String municipality,
+                               String suburb,
+                               String longitude,
+                               String latitude,
+                               String address,
+                               String id,
+                               Model model){
+        monumentService.saveMonument(nameMk, nameEn, city, region, municipality, suburb, longitude, latitude, address, Long.parseLong(id));
+        return "redirect:/monuments";
+    }
+
+    @GetMapping("/add")
+    public String getAddPage(HttpSession session, Model model){
+
+        if (!Objects.equals((String) session.getAttribute("role"), "ADMIN"))
+            return "redirect:/monuments";
+
+        return "addMonument";
     }
 
 }

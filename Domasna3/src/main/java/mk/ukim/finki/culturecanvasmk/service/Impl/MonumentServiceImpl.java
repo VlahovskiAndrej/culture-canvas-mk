@@ -2,7 +2,6 @@ package mk.ukim.finki.culturecanvasmk.service.Impl;
 
 import mk.ukim.finki.culturecanvasmk.model.DistanceCalculator;
 import mk.ukim.finki.culturecanvasmk.model.Monument;
-import mk.ukim.finki.culturecanvasmk.repository.InMemoryMonumentRepository;
 import mk.ukim.finki.culturecanvasmk.repository.jpa.MonumentRepository;
 import mk.ukim.finki.culturecanvasmk.service.MonumentService;
 import org.springframework.stereotype.Service;
@@ -19,6 +18,11 @@ public class MonumentServiceImpl implements MonumentService {
         this.monumentRepository = monumentRepository;
     }
 
+
+    @Override
+    public Monument findById(Long id) {
+        return monumentRepository.findById(id).orElse(null);
+    }
 
     @Override
     public List<Monument> listAllPlaces() {
@@ -59,5 +63,32 @@ public class MonumentServiceImpl implements MonumentService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public void deleteById(Long id) {
+        monumentRepository.deleteById(id);
+    }
 
+    @Override
+    public void saveMonument(String nameMk, String nameEn, String city, String region, String municipality, String suburb, String longitude, String latitude, String address, long id) {
+
+        if (id == 0) {   //CREATE NEW
+            monumentRepository.save(new Monument(nameMk, nameEn, region, city, municipality, "1000", suburb, longitude, latitude, address));
+        }
+        else{   //EDIT
+            Monument monument = monumentRepository.findById(id).orElse(null);
+
+            assert monument != null;
+            monument.setNameEn(nameEn);
+            monument.setNameMk(nameMk);
+            monument.setCity(city);
+            monument.setRegion(region);
+            monument.setMunicipality(municipality);
+            monument.setLongitude(longitude);
+            monument.setLatitude(latitude);
+            monument.setAddress(address);
+
+            monumentRepository.save(monument);
+        }
+    }
 }
+
