@@ -5,19 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ae06e9d-595d-4186-8126-d22306b2fa09" name="Changes" comment="Added header, footer and initial pages">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/07131d7f-04d3-4b05-b5a4-fe7ea73fb1c6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/07131d7f-04d3-4b05-b5a4-fe7ea73fb1c6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/listMonuments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/listMonuments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/master-template.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/master-template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/osm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/osm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/listMonuments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/listMonuments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/osm.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/osm.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/bootstrap/DataHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/bootstrap/DataHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/repository/jpa/MonumentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/repository/jpa/MonumentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/Impl/MonumentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/Impl/MonumentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/MonumentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/MonumentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +24,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
         <option value="Class" />
       </list>
     </option>
@@ -67,13 +63,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/fragments" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "feature/ajax-page-update",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\panci\Desktop\DIANS\Domasna3\src\main\resources\templates\fragments" />
@@ -155,6 +153,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added header, footer and initial pages" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CultureCanvasMK$CultureCanvasMkApplication.ic" NAME="CultureCanvasMkApplication Coverage Results" MODIFIED="1702078106293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/CultureCanvasMK$CultureCanvasMkApplication.ic" NAME="CultureCanvasMkApplication Coverage Results" MODIFIED="1702069247708" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
