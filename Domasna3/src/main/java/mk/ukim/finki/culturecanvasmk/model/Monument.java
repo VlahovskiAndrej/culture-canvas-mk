@@ -25,6 +25,8 @@ public class Monument {
     private String latitude;
     private String address;
 
+    private int score;
+
     public Monument(String nameMk, String nameEn, String region, String city, String municipality, String postcode, String suburb, String latitude, String longitude, String address) {
         this.nameMk = nameMk;
         this.nameEn = nameEn;
@@ -36,9 +38,11 @@ public class Monument {
         this.longitude = longitude;
         this.latitude = latitude;
         this.address = address;
+        this.score = 0;
     }
 
     public Monument() {
 
     }
+
 }
