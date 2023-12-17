@@ -3,6 +3,7 @@ package mk.ukim.finki.culturecanvasmk.web.controller;
 
 import jakarta.servlet.http.HttpSession;
 import mk.ukim.finki.culturecanvasmk.model.Monument;
+import mk.ukim.finki.culturecanvasmk.model.Review;
 import mk.ukim.finki.culturecanvasmk.model.exceptions.MonumentNotFoundException;
 import mk.ukim.finki.culturecanvasmk.service.InsertDataService;
 import mk.ukim.finki.culturecanvasmk.service.MonumentService;
@@ -122,6 +123,13 @@ public class MonumentController {
             return "redirect:/monuments";
 
         return "addMonument";
+    }
+    @PostMapping("/add_review/{monumentId}")
+    public String reviewBook(@PathVariable Long monumentId, Model model){
+        Monument monument = monumentService.findById(monumentId);
+        model.addAttribute("monument",monument);
+        model.addAttribute("bodyContent","monument-review");
+        return "master-template";
     }
 
 }
