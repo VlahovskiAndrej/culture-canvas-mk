@@ -1,10 +1,10 @@
 package mk.ukim.finki.culturecanvasmk.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -25,7 +25,10 @@ public class Monument {
     private String latitude;
     private String address;
 
-    private int score;
+    @OneToMany(mappedBy = "monument", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Review> reviews;
+
+
 
     public Monument(String nameMk, String nameEn, String region, String city, String municipality, String postcode, String suburb, String latitude, String longitude, String address) {
         this.nameMk = nameMk;
@@ -38,11 +41,18 @@ public class Monument {
         this.longitude = longitude;
         this.latitude = latitude;
         this.address = address;
-        this.score = 0;
+        this.reviews=new ArrayList<>();
     }
 
     public Monument() {
 
+    }
+
+    public double getRating()
+    {
+        if(!reviews.isEmpty())
+            return this.getReviews().stream().mapToInt(Review::getScore).average().getAsDouble();
+        return 0.0;
     }
 
 }
