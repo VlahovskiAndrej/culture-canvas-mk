@@ -23,16 +23,6 @@ public class MonumentController {
         this.monumentService = monumentService;
     }
 
-//    @GetMapping
-//    public ResponseEntity<String> getMonuments(Model model) {
-//
-//        List<String[]> monuments = monumentService.listAllPlaces();
-//        model.addAttribute("monuments", monuments);
-//
-//        return new ResponseEntity<String>(monuments, HttpStatus.OK);
-//    }
-
-
     @GetMapping
     public String getMonuments(Model model) {
 
@@ -74,18 +64,6 @@ public class MonumentController {
         return "master-template";
     }
 
-//    @PostMapping("/map")
-//    public String getFilteredMap(@RequestParam(required = false) Double distance,
-//                                 @RequestParam(required = false) Double latitude,
-//                                 @RequestParam(required = false) Double longitude,
-//                                 Model model) {
-//        model.addAttribute("monuments", monumentService.filterByDistance(latitude, longitude, distance));
-//        model.addAttribute("userLatitude", latitude);
-//        model.addAttribute("userLongitude", longitude);
-//        model.addAttribute("bodyContent", "osm");
-//        return "master-template";
-//    }
-
     @PostMapping("/map")
     @ResponseBody
     public MonumentResponse updateMap(@RequestParam(required = false) Double distance,
@@ -96,6 +74,21 @@ public class MonumentController {
         monumentResponse.setMonuments(monumentService.filterByDistance(latitude, longitude, distance));
         monumentResponse.setLatitude(latitude);
         monumentResponse.setLongitude(longitude);
+        return monumentResponse;
+    }
+
+    @PostMapping("/findRoute")
+    @ResponseBody
+    public MonumentResponse findRoute(@RequestParam(required = false) Double latitude1,
+                                      @RequestParam(required = false) Double longitude1,
+                                      @RequestParam(required = false) Double selectedLat,
+                                      @RequestParam(required = false) Double selectedLng) {
+
+        MonumentResponse monumentResponse = new MonumentResponse();
+        monumentResponse.setLatitude(latitude1);
+        monumentResponse.setLongitude(longitude1);
+        monumentResponse.setSelectedLat(selectedLat);
+        monumentResponse.setSelectedLng(selectedLng);
         return monumentResponse;
     }
 }

@@ -9,10 +9,8 @@ window.onload=function () {
             console.log("Latitude: " + latitude + ", Longitude: " + longitude);
             document.getElementById("latitude").value = latitude;
             document.getElementById("longitude").value = longitude;
-
-            // Here, you can perform further actions with the obtained coordinates
-            // For example, you can make an AJAX request to send the coordinates to the server
-            // or display the location on a map.
+            document.getElementById("latitude1").value = latitude;
+            document.getElementById("longitude1").value = longitude;
         }, function (error) {
             // Handle error cases
             switch (error.code) {

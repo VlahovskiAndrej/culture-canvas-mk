@@ -7,13 +7,20 @@
     <list default="true" id="2ae06e9d-595d-4186-8126-d22306b2fa09" name="Changes" comment="Added header, footer and initial pages">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/07131d7f-04d3-4b05-b5a4-fe7ea73fb1c6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/07131d7f-04d3-4b05-b5a4-fe7ea73fb1c6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/model/MonumentResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/model/MonumentResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/model/ThymeleafConfig.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/findUserLocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/findUserLocation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/refreshMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/refreshMap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/osm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/osm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/bootstrap/DataHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/bootstrap/DataHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/repository/jpa/MonumentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/repository/jpa/MonumentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/Impl/MonumentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/Impl/MonumentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/MonumentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/service/MonumentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/DistanceCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/DistanceCalculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/exceptions/MonumentNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/exceptions/MonumentNotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/Filter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/Filter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/Pipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/Pipe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/impl/CityFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/filters/impl/CityFilter.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/findUserLocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/findUserLocation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/osm.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/osm.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +30,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -65,7 +72,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "git-widget-placeholder": "feature/ajax-page-update",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -108,6 +120,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.osm.html" />
         <item itemvalue="JavaScript Debug.osm.html" />
       </list>
     </recent_temporary>
