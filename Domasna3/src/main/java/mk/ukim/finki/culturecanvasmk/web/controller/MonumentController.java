@@ -3,6 +3,7 @@ package mk.ukim.finki.culturecanvasmk.web.controller;
 
 import jakarta.servlet.http.HttpSession;
 import mk.ukim.finki.culturecanvasmk.model.Monument;
+import mk.ukim.finki.culturecanvasmk.model.MonumentResponse;
 import mk.ukim.finki.culturecanvasmk.model.Review;
 import mk.ukim.finki.culturecanvasmk.model.exceptions.MonumentNotFoundException;
 import mk.ukim.finki.culturecanvasmk.service.InsertDataService;
@@ -69,15 +70,16 @@ public class MonumentController {
     }
 
     @PostMapping("/map")
-    public String getFilteredMap(@RequestParam(required = false) Double distance,
-                                 @RequestParam(required = false) Double latitude,
-                                 @RequestParam(required = false) Double longitude,
-                                 Model model) {
-        model.addAttribute("monuments", monumentService.filterByDistance(latitude, longitude, distance));
-        model.addAttribute("userLatitude", latitude);
-        model.addAttribute("userLongitude", longitude);
-        model.addAttribute("bodyContent", "osm");
-        return "master-template";
+    @ResponseBody
+    public MonumentResponse updateMap(@RequestParam(required = false) Double distance,
+                                      @RequestParam(required = false) Double latitude,
+                                      @RequestParam(required = false) Double longitude) {
+
+        MonumentResponse monumentResponse = new MonumentResponse();
+        monumentResponse.setMonuments(monumentService.filterByDistance(latitude, longitude, distance));
+        monumentResponse.setLatitude(latitude);
+        monumentResponse.setLongitude(longitude);
+        return monumentResponse;
     }
 
     @GetMapping("/{id}/delete")
