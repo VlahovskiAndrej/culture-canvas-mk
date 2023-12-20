@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2ae06e9d-595d-4186-8126-d22306b2fa09" name="Changes" comment="Added header, footer and initial pages">
+    <list default="true" id="2ae06e9d-595d-4186-8126-d22306b2fa09" name="Changes" comment="AJAX functionality for map update without page refresh">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/model/config/ThymeleafConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/model/MonumentResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/model/MonumentResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/findUserLocation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/findUserLocation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/refreshMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/refreshMap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/osm.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/osm.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,11 +21,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="Interface" />
         <option value="HTML File" />
         <option value="Class" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -77,6 +78,7 @@
     "git-widget-placeholder": "feature/ajax-map-update",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/samoi/Desktop/V S/VP/Lab(s)",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -171,7 +173,7 @@
       <workItem from="1702399655493" duration="792000" />
       <workItem from="1702574562461" duration="304000" />
       <workItem from="1702751551657" duration="7841000" />
-      <workItem from="1703095968874" duration="613000" />
+      <workItem from="1703095968874" duration="1529000" />
     </task>
     <task id="LOCAL-00001" summary="Added header, footer and initial pages">
       <created>1702086589307</created>
@@ -204,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702236902684</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="AJAX functionality for map update without page refresh">
+      <option name="closed" value="true" />
+      <created>1703096870803</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703096870803</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +233,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added header, footer and initial pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added header, footer and initial pages" />
+    <MESSAGE value="AJAX functionality for map update without page refresh" />
+    <option name="LAST_COMMIT_MESSAGE" value="AJAX functionality for map update without page refresh" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

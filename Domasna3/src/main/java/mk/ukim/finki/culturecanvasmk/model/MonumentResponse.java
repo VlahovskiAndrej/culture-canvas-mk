@@ -10,4 +10,6 @@ public class MonumentResponse {
     private List<Monument> monuments;
     private Double latitude;
     private Double longitude;
+    private Double selectedLat;
+    private Double selectedLng;
 }

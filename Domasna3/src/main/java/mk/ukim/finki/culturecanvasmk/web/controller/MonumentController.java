@@ -82,6 +82,21 @@ public class MonumentController {
         return monumentResponse;
     }
 
+    @PostMapping("/findRoute")
+    @ResponseBody
+    public MonumentResponse findRoute(@RequestParam(required = false) Double latitude1,
+                                      @RequestParam(required = false) Double longitude1,
+                                      @RequestParam(required = false) Double selectedLat,
+                                      @RequestParam(required = false) Double selectedLng) {
+
+        MonumentResponse monumentResponse = new MonumentResponse();
+        monumentResponse.setLatitude(latitude1);
+        monumentResponse.setLongitude(longitude1);
+        monumentResponse.setSelectedLat(selectedLat);
+        monumentResponse.setSelectedLng(selectedLng);
+        return monumentResponse;
+    }
+
     @GetMapping("/{id}/delete")
     public String deleteMonument(@PathVariable long id,HttpSession session, Model model){
 

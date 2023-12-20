@@ -7,30 +7,13 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
             crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="/refreshMap.js"></script>
     <!-- Add Bootstrap CSS link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <style>
-        #map-container {
-            text-align: center;
-            width: 100%;
-            max-width: 100%;
-        }
-
-        #filterPart {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            max-height: 500px;
-        }
-
-        #filterForm {
-            margin-bottom: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="/osmStyle.css">
 
 </head>
 
@@ -60,12 +43,27 @@
                     </form>
 
                 </div>
+                <div id="findRoutePart">
+
+                    <form th:method="POST" th:action="@{/monuments/findRoute}" id="findRoute" class="row">
+                        <div class="d-flex flex-column">
+                            <div class="form-group">
+                                <span>Click on marker and find your route</span>
+                                <button type="submit" class="btn btn-primary mt-auto" id="findRouteButton">Find Route</button>
+                            </div>
+                            <input id="latitude1" type="hidden" name="latitude1">
+                            <input id="longitude1" type="hidden" name="longitude1">
+                            <input id="selectedLat" type="hidden" name="selectedLat">
+                            <input id="selectedLng" type="hidden" name="selectedLng">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<script th:inline="javascript">
+<script th:inline="javascript" defer>
     var map = L.map('map').setView([41.6086, 21.7453], 8);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -73,6 +71,18 @@
     }).addTo(map);
 
     var monuments = [[${monuments}]];
+
+    var userLat = parseFloat(document.getElementById("latitude").value);
+    var userLng = parseFloat(document.getElementById("longitude").value);
+    if (!isNaN(userLat) && !isNaN(userLng)) {
+        var redIcon = L.icon({
+            iconUrl: 'https://clipground.com/images/google-maps-marker-transparent-png-10.png', // URL to the red marker image
+            iconSize: [25, 41], // size of the icon
+            iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
+            popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+        });
+        var userLoc = L.marker([userLat, userLng], {icon: redIcon}).addTo(map);
+    }
 
     monuments.forEach(function (monument) {
         var marker = L.marker([parseFloat(monument.latitude), parseFloat(monument.longitude)]).addTo(map);
@@ -102,19 +112,12 @@
         }
 
         marker.bindPopup(popupContent);
-    })
 
-    var userLat = [[${userLatitude}]];
-    var userLng = [[${userLongitude}]];
-    if (userLat !== null && userLng !== null) {
-        var redIcon = L.icon({
-            iconUrl: 'https://clipground.com/images/google-maps-marker-transparent-png-10.png', // URL to the red marker image
-            iconSize: [25, 41], // size of the icon
-            iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
-            popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
+        marker.on('click', function(e) {
+            document.getElementById('selectedLat').value = e.latlng.lat;
+            document.getElementById('selectedLng').value = e.latlng.lng;
         });
-        var marker = L.marker([userLat, userLng], {icon: redIcon}).addTo(map);
-    }
+    })
 
 </script>
 
@@ -128,5 +131,5 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 <script src="/findUserLocation.js"></script>
-
+<script src="/drawRoute.js"></script>
 </html>

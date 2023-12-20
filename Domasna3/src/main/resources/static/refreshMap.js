@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    var userLoc;
+    var routeControl;
     $('#filterForm').submit(function(event) {
         // Prevent the default form submission
         event.preventDefault();
@@ -21,6 +23,11 @@ $(document).ready(function() {
                             map.removeLayer(layer);
                         }
                     });
+
+                    if (routeControl) {
+                        // Remove the existing route if it exists
+                        map.removeControl(routeControl);
+                    }
 
                     // Add new markers based on the updated data from the response
                     response.monuments.forEach(function(monument) {
@@ -50,6 +57,11 @@ $(document).ready(function() {
                         }
 
                         marker.bindPopup(popupContent);
+
+                        marker.on('click', function(e) {
+                            document.getElementById('selectedLat').value = e.latlng.lat;
+                            document.getElementById('selectedLng').value = e.latlng.lng;
+                        });
                     });
                 }
 
@@ -60,7 +72,7 @@ $(document).ready(function() {
                         iconAnchor: [12, 41], // point of the icon which will correspond to marker's location
                         popupAnchor: [1, -34] // point from which the popup should open relative to the iconAnchor
                     });
-                    var marker = L.marker([response.latitude, response.longitude], {icon: redIcon}).addTo(map);
+                    userLoc = L.marker([response.latitude, response.longitude], {icon: redIcon}).addTo(map);
                 }
             },
             error: function(error) {
