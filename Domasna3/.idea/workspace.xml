@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2ae06e9d-595d-4186-8126-d22306b2fa09" name="Changes" comment="Added header, footer and initial pages">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/model/Review.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/repository/jpa/ReviewRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/service/Impl/ReviewServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/service/ReviewService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/ReviewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/listReviews.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/monument-review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/model/Monument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/model/Monument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/model/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/model/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/repository/jpa/MonumentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/repository/jpa/MonumentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/footer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/listMonuments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/listMonuments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application-prod.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/Monument.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mk/ukim/finki/culturecanvasmk/model/Monument.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +35,8 @@
         <option value="CSS File" />
         <option value="JavaScript File" />
         <option value="Interface" />
-        <option value="HTML File" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -61,29 +76,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.CultureCanvasMkApplication.executor&quot;: &quot;Run&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "Spring Boot.CultureCanvasMkApplication.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/samoi/Desktop/V S/VP/Lab(s)",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\panci\Desktop\DIANS\Domasna3\src\main\resources\templates\fragments" />
@@ -113,6 +130,17 @@
     </configuration>
     <configuration name="osm.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Domasna3/Domasna3/src/main/resources/templates/osm.html" useBuiltInWebServerPort="true">
       <method v="2" />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="CultureCanvasMkApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="CultureCanvasMK" />
@@ -153,6 +181,7 @@
       <workItem from="1702317408081" duration="597000" />
       <workItem from="1702399655493" duration="792000" />
       <workItem from="1702574562461" duration="304000" />
+      <workItem from="1702751551657" duration="7841000" />
     </task>
     <task id="LOCAL-00001" summary="Added header, footer and initial pages">
       <created>1702086589307</created>
@@ -216,7 +245,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/mk/ukim/finki/culturecanvasmk/web/controller/MonumentController.java</url>
-          <line>113</line>
+          <line>114</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

@@ -1,6 +1,7 @@
 package mk.ukim.finki.culturecanvasmk.repository.jpa;
 
 import mk.ukim.finki.culturecanvasmk.model.Monument;
+import mk.ukim.finki.culturecanvasmk.model.Review;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -24,4 +25,9 @@ public interface MonumentRepository extends JpaRepository<Monument, Long> {
     List<Double> findAllLongitudes();
 
     void deleteById(Long id);
+
+    default void addReviewToMonument(Monument monument,Review review)
+    {
+        monument.getReviews().add(review);
+    }
 }

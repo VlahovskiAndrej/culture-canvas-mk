@@ -49,6 +49,14 @@
             margin: 0 3px;
         }
 
+        #rating-div
+        {
+
+            text-align: center;
+            margin-left: auto;
+            font-family: sans-serif ;
+            font-weight: bolder;
+        }
 
     </style>
 </head>
@@ -96,6 +104,17 @@
                         <form th:if="${session.role eq 'ADMIN'}" th:action="@{'/monuments/{id}/delete' (id=${monument.getId()})}" th:method="GET">
                             <input class="btn btn-danger" type="submit" value="Delete">
                         </form>
+                        <form th:action="@{'/monuments/add_review/{monumentId}' (monumentId=${monument.getId()})}" th:method="POST">
+                            <!--<button class="btn btn-primary" type="submit">Add Review</button>-->
+                            <input class="btn btn-primary" type="submit" value="Add Review">
+                        </form>
+                        <form th:action="@{'/review/show/{monumentId}' (monumentId=${monument.getId()})}" th:method="GET">
+                           <!-- <button class="btn btn-primary" type="submit">Show Reviews</button> -->
+                            <input class="btn btn-primary" type="submit" value="Show Reviews">
+                        </form>
+                        <div id = "rating-div">
+                            <th:block th:text="'Rating: '+ ${monument.getRating()}"></th:block>
+                        </div>
                     </div>
 
 
