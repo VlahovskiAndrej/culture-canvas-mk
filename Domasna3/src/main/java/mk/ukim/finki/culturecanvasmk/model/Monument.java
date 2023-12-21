@@ -25,7 +25,8 @@ public class Monument {
     private String latitude;
     private String address;
 
-    @OneToMany(mappedBy = "monument", cascade = CascadeType.ALL, orphanRemoval = true)
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Review> reviews;
 
 

@@ -66,6 +66,7 @@ public class MonumentController {
         model.addAttribute("monuments", monumentService.listAllPlaces());
         model.addAttribute("bodyContent", "osm");
         return "master-template";
+//        return "osm";
     }
 
     @PostMapping("/map")
@@ -125,7 +126,7 @@ public class MonumentController {
         return "addMonument";
     }
     @PostMapping("/add_review/{monumentId}")
-    public String reviewBook(@PathVariable Long monumentId, Model model){
+    public String reviewMonument(@PathVariable Long monumentId, Model model){
         Monument monument = monumentService.findById(monumentId);
         model.addAttribute("monument",monument);
         model.addAttribute("bodyContent","monument-review");

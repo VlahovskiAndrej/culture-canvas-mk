@@ -2,6 +2,8 @@ package mk.ukim.finki.culturecanvasmk.service.Impl;
 
 import mk.ukim.finki.culturecanvasmk.model.DistanceCalculator;
 import mk.ukim.finki.culturecanvasmk.model.Monument;
+import mk.ukim.finki.culturecanvasmk.model.Review;
+import mk.ukim.finki.culturecanvasmk.model.exceptions.MonumentNotFoundException;
 import mk.ukim.finki.culturecanvasmk.repository.jpa.MonumentRepository;
 import mk.ukim.finki.culturecanvasmk.service.MonumentService;
 import org.springframework.stereotype.Service;
@@ -89,6 +91,17 @@ public class MonumentServiceImpl implements MonumentService {
 
             monumentRepository.save(monument);
         }
+    }
+    @Override
+    public void addReviewToMonument(Review review, Long monumentId) {
+        Monument monument = monumentRepository.findById(monumentId).orElseThrow(()->new MonumentNotFoundException(monumentId));
+        monumentRepository.addReviewToMonument(monument.getId(),review);
+    }
+
+    @Override
+    public List<Review> listAllReviewsForMonument(Long id) {
+        Monument monument = monumentRepository.findById(id).orElseThrow(()->new MonumentNotFoundException(id));
+        return monument.getReviews();
     }
 }
 

@@ -74,7 +74,9 @@
 
     var monuments = [[${monuments}]];
 
-    monuments.forEach(function (monument) {
+    monuments.forEach(function (monument){
+    if (monument.latitude !== null && monument.longitude !== null) {
+
         var marker = L.marker([parseFloat(monument.latitude), parseFloat(monument.longitude)]).addTo(map);
 
         var popupContent = "<b>Name:</b> " + monument.nameMk + "<br>";
@@ -102,7 +104,8 @@
         }
 
         marker.bindPopup(popupContent);
-    })
+
+    }})
 
     var userLat = [[${userLatitude}]];
     var userLng = [[${userLongitude}]];

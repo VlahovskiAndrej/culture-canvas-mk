@@ -22,21 +22,17 @@ public class ReviewServiceImpl implements ReviewService {
         this.monumentRepository = monumentRepository;
     }
 
-    @Override
-    public void addReviewToMonument(Review review, Long monumentId) {
-        Monument monument = monumentRepository.findById(monumentId).orElseThrow(()->new MonumentNotFoundException(monumentId));
-        monumentRepository.addReviewToMonument(monument,review);
-    }
+
 
     @Override
     public Review save(Review review) {
         return reviewRepository.save(review);
     }
 
-    @Override
+   /* @Override
     public List<Review> findAllByMonumentId(Long monumentId) {
         return reviewRepository.findAllByMonumentId(monumentId);
-    }
+    }*/
 
     //ONLY ADMIN ALLOWED TO DELETE
     @Override

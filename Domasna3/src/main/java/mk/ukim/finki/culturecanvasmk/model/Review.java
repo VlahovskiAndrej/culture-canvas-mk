@@ -19,14 +19,15 @@ public class Review {
     @Column(length = 4000)
     private String description;
 
-    @ManyToOne
-    private Monument monument;
 
 
-    public Review(Integer score, String description,Monument monument) {
+    /*@ManyToOne
+    private Monument monument;*/
+
+
+    public Review(Integer score, String description) {
         this.score = score;
         this.description = description;
-        this.monument=monument;
     }
     public Review()
     {
