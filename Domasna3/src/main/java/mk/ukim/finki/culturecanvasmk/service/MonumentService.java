@@ -1,6 +1,7 @@
 package mk.ukim.finki.culturecanvasmk.service;
 
 import mk.ukim.finki.culturecanvasmk.model.Monument;
+import mk.ukim.finki.culturecanvasmk.model.Review;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,7 +27,9 @@ public interface MonumentService {
     void deleteById(Long id);
     void saveMonument(String nameMk, String nameEn, String city, String region, String municipality, String suburb, String longitude, String latitude, String address, long id);
 
-
+    void addReviewToMonument(Review review, Long monumentId);
+    List<Review> listAllReviewsForMonument(Long id);
+    void deleteReviewById(Long monument_id,Long review_id);
 }
 
 

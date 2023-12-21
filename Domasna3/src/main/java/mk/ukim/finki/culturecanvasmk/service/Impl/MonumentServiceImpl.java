@@ -2,7 +2,11 @@ package mk.ukim.finki.culturecanvasmk.service.Impl;
 
 import mk.ukim.finki.culturecanvasmk.model.DistanceCalculator;
 import mk.ukim.finki.culturecanvasmk.model.Monument;
+import mk.ukim.finki.culturecanvasmk.model.Review;
+import mk.ukim.finki.culturecanvasmk.model.exceptions.MonumentNotFoundException;
+import mk.ukim.finki.culturecanvasmk.model.exceptions.NoReviewFoundException;
 import mk.ukim.finki.culturecanvasmk.repository.jpa.MonumentRepository;
+import mk.ukim.finki.culturecanvasmk.repository.jpa.ReviewRepository;
 import mk.ukim.finki.culturecanvasmk.service.MonumentService;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +17,11 @@ import java.util.stream.Collectors;
 @Service
 public class MonumentServiceImpl implements MonumentService {
     private final MonumentRepository monumentRepository;
+    private final ReviewRepository reviewRepository;
 
-    public MonumentServiceImpl(MonumentRepository monumentRepository) {
+    public MonumentServiceImpl(MonumentRepository monumentRepository, ReviewRepository reviewRepository) {
         this.monumentRepository = monumentRepository;
+        this.reviewRepository = reviewRepository;
     }
 
 
@@ -89,6 +95,25 @@ public class MonumentServiceImpl implements MonumentService {
 
             monumentRepository.save(monument);
         }
+    }
+    @Override
+    public void addReviewToMonument(Review review, Long monumentId) {
+        Monument monument = monumentRepository.findById(monumentId).orElseThrow(()->new MonumentNotFoundException(monumentId));
+        monumentRepository.addReviewToMonument(monument.getId(),review);
+    }
+    @Override
+    public List<Review> listAllReviewsForMonument(Long id) {
+        Monument monument = monumentRepository.findById(id).orElseThrow(()->new MonumentNotFoundException(id));
+        return monument.getReviews();
+    }
+
+    @Override
+    public void deleteReviewById(Long monument_id,Long review_id) {
+        Review review = reviewRepository.findById(review_id).orElseThrow(()-> new NoReviewFoundException(review_id));
+        Monument monument = monumentRepository.findById(monument_id).orElseThrow(()->new MonumentNotFoundException(monument_id));
+        monument.getReviews().remove(review);
+        reviewRepository.deleteById(review_id);
+        monumentRepository.save(monument);
     }
 }
 

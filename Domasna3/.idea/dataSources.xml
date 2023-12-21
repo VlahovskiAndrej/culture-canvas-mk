@@ -13,7 +13,7 @@
       </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="canvasmk@localhost" uuid="f777b1fd-6f54-40f5-9b77-7500d65a695d">
+    <data-source source="LOCAL" name="canvasmk@localhost" uuid="4dae16ca-a3ec-4d76-891a-4a8796366d02">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>

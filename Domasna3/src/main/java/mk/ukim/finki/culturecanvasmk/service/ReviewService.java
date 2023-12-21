@@ -8,11 +8,10 @@ import java.util.List;
 
 public interface ReviewService {
 
-    void addReviewToMonument(Review review, Long monumentId);
 
     Review save(Review review);
 
-    List<Review> findAllByMonumentId(Long monumentId);
+  //  List<Review> findAllByMonumentId(Long monumentId);
 
     void deleteById(Long reviewId);
 }

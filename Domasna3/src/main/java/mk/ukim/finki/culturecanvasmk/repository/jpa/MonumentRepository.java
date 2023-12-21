@@ -26,8 +26,10 @@ public interface MonumentRepository extends JpaRepository<Monument, Long> {
 
     void deleteById(Long id);
 
-    default void addReviewToMonument(Monument monument,Review review)
+    default void addReviewToMonument(Long id,Review review)
     {
+        Monument monument = findById(id).get();
         monument.getReviews().add(review);
+        save(monument);
     }
 }
