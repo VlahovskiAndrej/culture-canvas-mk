@@ -1,5 +1,6 @@
 package mk.ukim.finki.culturecanvasmk.web.controller;
 
+import jakarta.servlet.http.HttpSession;
 import mk.ukim.finki.culturecanvasmk.model.Monument;
 import mk.ukim.finki.culturecanvasmk.model.Review;
 import mk.ukim.finki.culturecanvasmk.service.MonumentService;
@@ -9,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 @Controller
 @RequestMapping("/review")
@@ -41,5 +43,15 @@ public class ReviewController {
         return "master-template";
 
     }
+    @PostMapping("/delete/{monumentId}")
+    public String deleteReview(@PathVariable Long monumentId, @RequestParam Long review_id, HttpSession session)
+    {
+        if (!Objects.equals((String) session.getAttribute("role"), "ADMIN"))
+            return "redirect:/monuments";
 
+        Monument monument = monumentService.findById(monumentId);
+        monumentService.deleteReviewById(monumentId,review_id);
+
+        return "redirect:/review/show/{monumentId}";
+    }
 }

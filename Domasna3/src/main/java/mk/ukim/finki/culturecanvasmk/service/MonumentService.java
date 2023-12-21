@@ -29,6 +29,7 @@ public interface MonumentService {
 
     void addReviewToMonument(Review review, Long monumentId);
     List<Review> listAllReviewsForMonument(Long id);
+    void deleteReviewById(Long monument_id,Long review_id);
 }
 
 
