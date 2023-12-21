@@ -1,0 +1,9 @@
+<ul th:each="user : ${users}">
+    <li>
+        <h4 th:text="'ID: ' + ${user.getId()}"></h4>
+        <h5 th:text="'Username: ' + ${user.getUsername()}" ></h5>
+        <h5 th:text="'Password: ' + ${user.getPassword()}"></h5>
+        <h5 th:text="'Role: ' + ${user.getRole()}"></h5>
+        <hr>
+    </li>
+</ul>

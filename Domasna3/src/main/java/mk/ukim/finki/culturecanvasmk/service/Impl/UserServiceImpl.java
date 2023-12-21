@@ -5,6 +5,8 @@ import mk.ukim.finki.culturecanvasmk.repository.jpa.UserRepository;
 import mk.ukim.finki.culturecanvasmk.service.UserService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
 
@@ -14,6 +16,11 @@ public class UserServiceImpl implements UserService {
         this.userRepository = userRepository;
     }
 
+
+    @Override
+    public List<User> listUsers() {
+        return userRepository.findAll();
+    }
 
     @Override
     public Boolean checkUsernameAndPassword(String username, String password) {
