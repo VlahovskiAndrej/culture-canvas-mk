@@ -74,7 +74,11 @@
     {
       width: 60px;
     }
-
+    #review-listing
+    {
+      list-style-type: none;
+      width: 80%;
+    }
   </style>
 </head>
 
@@ -83,21 +87,64 @@
   <header>
     <h1 th:text="${monument.getNameMk()} + ' reviews'"></h1>
   </header>
-  <table >
-    <thead>
-    <tr>
-      <th>Description </th>
-      <th id="score-th">Score</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="review : ${reviews}">
-      <td th:text="${review.getDescription()}"></td>
-      <td th:text="${review.getScore()}"></td>
-    </tr>
-    </tbody>
-  </table>
+<!--  <table >-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--      <th>Description </th>-->
+<!--      <th id="score-th">Score</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr th:each="review : ${reviews}">-->
+<!--      <td th:text="${review.getDescription()}"></td>-->
+<!--      <td th:text="${review.getScore()}"></td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--  </table>-->
+  <ul th:each="review : ${reviews}">
+    <li id="review-listing">
+      <div class="card bg-light mb-3 w-100">
+        <div class="card-header">
+          <!--                <span th:text="${review.getScore()}"></span>-->
 
+          <div th:if="${review.getScore() == 1}">
+            <i style = "color:#ffe234;" class="bi bi-star-fill"></i>
+          </div>
+
+          <div th:if="${review.getScore() == 2}">
+            <i style = "color:#ffe234;" class="bi bi-star-fill"></i>
+            <i style = "color:#ffe234;" class="bi bi-star-fill"></i>
+          </div>
+
+          <div th:if="${review.getScore() == 3}">
+            <i style = "color:#ffe234;" class="bi bi-star-fill"></i>
+            <i style = "color:#ffe234;" class="bi bi-star-fill"></i>
+            <i style = "color:#ffe234;" class="bi bi-star-fill"></i>
+          </div>
+
+          <div th:if="${review.getScore() == 4}">
+            <i style = "color:#ffe234;" class="bi bi-star-fill"></i>
+            <i style = "color:#ffe234;" class="bi bi-star-fill"></i>
+            <i style = "color:#ffe234;" class="bi bi-star-fill"></i>
+            <i style = "color:#ffe234;" class="bi bi-star-fill"></i>
+          </div>
+
+          <div th:if="${review.getScore() == 5}">
+            <i style = "color:#ffe234;" class="bi bi-star-fill"></i>
+            <i style = "color:#ffe234;" class="bi bi-star-fill"></i>
+            <i style = "color:#ffe234;" class="bi bi-star-fill"></i>
+            <i style = "color:#ffe234;" class="bi bi-star-fill"></i>
+            <i style = "color:#ffe234;" class="bi bi-star-fill"></i>
+          </div>
+
+
+        </div>
+        <div class="card-body">
+          <h5 class="card-title" th:text="${review.getDescription()}"></h5>
+        </div>
+      </div>
+    </li>
+  </ul>
 </div>
 
 

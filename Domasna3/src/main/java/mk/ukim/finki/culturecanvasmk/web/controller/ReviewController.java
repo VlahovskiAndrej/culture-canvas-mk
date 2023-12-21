@@ -25,8 +25,8 @@ public class ReviewController {
     public String addReview(@PathVariable Long monumentId, @RequestParam String review_description, @RequestParam int score)
     {
         Monument monument = monumentService.findById(monumentId);
-        Review review = reviewService.save(new Review(score,review_description,monument));
-        reviewService.addReviewToMonument(review,monumentId);
+        Review review = reviewService.save(new Review(score,review_description));
+        monumentService.addReviewToMonument(review,monumentId);
         return "redirect:/monuments";
     }
 
@@ -34,7 +34,7 @@ public class ReviewController {
     public String showReviews(@PathVariable Long monumentId, Model model)
     {
         Monument monument = monumentService.findById(monumentId);
-        List<Review> reviews = reviewService.findAllByMonumentId(monumentId);
+        List<Review> reviews = monumentService.listAllReviewsForMonument(monumentId);
         model.addAttribute("monument",monument);
         model.addAttribute("reviews",reviews);
         model.addAttribute("bodyContent", "listReviews");
