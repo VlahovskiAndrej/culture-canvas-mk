@@ -1,32 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Review</title>
-    <style>
-        /* Apply some basic styles to the textarea */
-        #reviewDescription {
-            width: 70%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
 
-        /* Optional: Add some styling for the label */
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        #submit-btn{
-            margin-top: 0.3%;
-        }
-
-    </style>
-</head>
-<body>
 
 <form th:action="@{'/review/add/{monumentId}' (monumentId = ${monument.getId()})}" th:method="POST">
 
@@ -38,5 +10,3 @@
 
     <input id='submit-btn' class="btn btn-secondary" type="submit" value="Submit review">
 </form>
-</body>
-</html>
