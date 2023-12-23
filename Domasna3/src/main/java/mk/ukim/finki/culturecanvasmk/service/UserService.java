@@ -14,5 +14,5 @@ public interface UserService {
 
     Boolean registerUser(String firstName, String lastName, String username, String password);
 
-
+    void deleteById(Long userId);
 }

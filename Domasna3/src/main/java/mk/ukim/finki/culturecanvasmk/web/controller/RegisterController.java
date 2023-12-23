@@ -27,8 +27,7 @@ public class RegisterController {
     public String registerUser(String firstName, String lastName, String username, String password, Model model) {
         if (userService.registerUser(firstName, lastName, username, password)){
 
-            model.addAttribute("bodyContent","redirect:/login");
-            return "master-template";
+            return "redirect:/login";
         }
 
         model.addAttribute("bodyContent","register");

@@ -28,6 +28,7 @@ public class ReviewController {
     {
         if (!Objects.equals((String) session.getAttribute("role"), "ADMIN") && !Objects.equals((String) session.getAttribute("role"), "USER") )
             return "redirect:/monuments";
+
         Monument monument = monumentService.findById(monumentId);
         Review review = reviewService.save(new Review(score,review_description));
         monumentService.addReviewToMonument(review,monumentId);

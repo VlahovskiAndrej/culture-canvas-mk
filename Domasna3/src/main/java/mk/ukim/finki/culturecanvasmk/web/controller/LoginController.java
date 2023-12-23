@@ -34,7 +34,8 @@ public class LoginController {
             session.setAttribute("username", username);
             session.setAttribute("role", user.getRole());
 
-            model.addAttribute("bodyContent","redirect:/monuments");
+//            return "redirect:/monuments";
+            model.addAttribute("bodyContent","home");
             return "master-template";
         } else {
             model.addAttribute("error", "Invalid username or password");
@@ -42,6 +43,7 @@ public class LoginController {
             model.addAttribute("bodyContent","login");
             return "master-template";
         }
+
     }
 
     @GetMapping("/logout")

@@ -99,8 +99,7 @@ public class MonumentController {
     public String deleteMonument(@PathVariable long id,HttpSession session, Model model){
 
         if (session.getAttribute("role") != "ADMIN"){
-            model.addAttribute("bodyContent","redirect:/monuments");
-            return "master-template";
+            return "redirect:/monuments";
         }
 
         monumentService.deleteById(id);
@@ -112,8 +111,7 @@ public class MonumentController {
     public String getEditPage(@PathVariable long id, HttpSession session, Model model){
 
         if (!Objects.equals((String) session.getAttribute("role"), "ADMIN")){
-            model.addAttribute("bodyContent","redirect:/monuments");
-            return "master-template";
+            return "redirect:/monuments";
         }
 
         model.addAttribute("monument", monumentService.findById(id));
@@ -136,16 +134,14 @@ public class MonumentController {
                                Model model){
         monumentService.saveMonument(nameMk, nameEn, city, region, municipality, suburb, longitude, latitude, address, Long.parseLong(id));
 
-        model.addAttribute("bodyContent","redirect:/monuments");
-        return "master-template";
+        return "redirect:/monuments";
     }
 
     @GetMapping("/add")
     public String getAddPage(HttpSession session, Model model){
 
         if (!Objects.equals((String) session.getAttribute("role"), "ADMIN")){
-            model.addAttribute("bodyContent","redirect:/monuments");
-            return "master-template";
+            return "redirect:/monuments";
         }
 
         model.addAttribute("bodyContent","addMonument");

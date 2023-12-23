@@ -52,7 +52,7 @@ public class Monument {
     {
         if(!reviews.isEmpty()){
             double avg = this.getReviews().stream().mapToInt(Review::getScore).average().getAsDouble();
-            return Math.round(avg * 100.0) / 100.0;
+            return Math.round(avg * 100.0) / 100.0 + 0;
         }
 
         return 0.0;
