@@ -104,7 +104,7 @@
                         <form th:if="${session.role eq 'ADMIN'}" th:action="@{'/monuments/{id}/delete' (id=${monument.getId()})}" th:method="GET">
                             <input class="btn btn-danger" type="submit" value="Delete">
                         </form>
-                        <form th:action="@{'/monuments/add_review/{monumentId}' (monumentId=${monument.getId()})}" th:method="POST">
+                        <form  th:if="${session.role eq 'ADMIN' or session.role eq 'USER'}" th:action="@{'/monuments/add_review/{monumentId}' (monumentId=${monument.getId()})}" th:method="POST">
                             <!--<button class="btn btn-primary" type="submit">Add Review</button>-->
                             <input class="btn btn-primary" type="submit" value="Add Review">
                         </form>

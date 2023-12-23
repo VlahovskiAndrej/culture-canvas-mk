@@ -24,8 +24,10 @@ public class ReviewController {
     }
 
     @PostMapping("/add/{monumentId}")
-    public String addReview(@PathVariable Long monumentId, @RequestParam String review_description, @RequestParam int score)
+    public String addReview(@PathVariable Long monumentId, @RequestParam String review_description, @RequestParam int score,HttpSession session)
     {
+        if (!Objects.equals((String) session.getAttribute("role"), "ADMIN") && !Objects.equals((String) session.getAttribute("role"), "USER") )
+            return "redirect:/monuments";
         Monument monument = monumentService.findById(monumentId);
         Review review = reviewService.save(new Review(score,review_description));
         monumentService.addReviewToMonument(review,monumentId);
