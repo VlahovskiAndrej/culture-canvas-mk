@@ -1,64 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/css/listMonuments.css}" />
     <title>CultureCanvasMK - Home</title>
-    <style type="text/css">
-        #box {
-            border: 1px solid black;
-            padding: 7px;
-            border-radius: 7px;
-            margin-left: -40px;
-        }
 
-        #searchMonuments {
-            /*margin: 5px;*/
-            padding: 5px 15px;
-            border-radius: 12px;
-            border: 1px solid black;
-            width: 80%;
-        }
-
-        #citySelect {
-            /*margin: 5px;*/
-            padding: 5px;
-            border-radius: 12px;
-            border: 1px solid black;
-            width: 19.5%;
-        }
-
-        #submit-btn {
-            width: 100%;
-            border-radius: 12px;
-            /*border: 1px solid black;*/
-            margin: 7px 0 20px;
-            /*background: lightblue;*/
-        }
-
-        #button-div{
-            display: flex;
-        }
-
-        #button-div input{
-            margin: 0 3px;
-        }
-
-        #rating-div
-        {
-
-            text-align: center;
-            margin-left: auto;
-            font-family: sans-serif ;
-            font-weight: bolder;
-        }
-
-    </style>
 </head>
 
 <div class="container">
@@ -104,7 +56,7 @@
                         <form th:if="${session.role eq 'ADMIN'}" th:action="@{'/monuments/{id}/delete' (id=${monument.getId()})}" th:method="GET">
                             <input class="btn btn-danger" type="submit" value="Delete">
                         </form>
-                        <form  th:if="${session.role eq 'ADMIN' or session.role eq 'USER'}" th:action="@{'/monuments/add_review/{monumentId}' (monumentId=${monument.getId()})}" th:method="POST">
+                        <form th:action="@{'/monuments/add_review/{monumentId}' (monumentId=${monument.getId()})}" th:method="POST">
                             <!--<button class="btn btn-primary" type="submit">Add Review</button>-->
                             <input class="btn btn-primary" type="submit" value="Add Review">
                         </form>

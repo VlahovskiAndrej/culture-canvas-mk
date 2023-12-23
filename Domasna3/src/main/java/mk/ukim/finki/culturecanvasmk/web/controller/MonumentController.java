@@ -4,9 +4,7 @@ package mk.ukim.finki.culturecanvasmk.web.controller;
 import jakarta.servlet.http.HttpSession;
 import mk.ukim.finki.culturecanvasmk.model.Monument;
 import mk.ukim.finki.culturecanvasmk.model.MonumentResponse;
-import mk.ukim.finki.culturecanvasmk.model.Review;
 import mk.ukim.finki.culturecanvasmk.model.exceptions.MonumentNotFoundException;
-import mk.ukim.finki.culturecanvasmk.service.InsertDataService;
 import mk.ukim.finki.culturecanvasmk.service.MonumentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -100,21 +98,28 @@ public class MonumentController {
     @GetMapping("/{id}/delete")
     public String deleteMonument(@PathVariable long id,HttpSession session, Model model){
 
-        if (session.getAttribute("role") != "ADMIN")
-            return "redirect:/monuments";
+        if (session.getAttribute("role") != "ADMIN"){
+            model.addAttribute("bodyContent","redirect:/monuments");
+            return "master-template";
+        }
 
         monumentService.deleteById(id);
-        return "redirect:/monuments";
+        model.addAttribute("bodyContent","redirect:/monuments");
+        return "master-template";
     }
 
     @GetMapping("/{id}/edit")
     public String getEditPage(@PathVariable long id, HttpSession session, Model model){
 
-        if (!Objects.equals((String) session.getAttribute("role"), "ADMIN"))
-            return "redirect:/monuments";
+        if (!Objects.equals((String) session.getAttribute("role"), "ADMIN")){
+            model.addAttribute("bodyContent","redirect:/monuments");
+            return "master-template";
+        }
 
         model.addAttribute("monument", monumentService.findById(id));
-        return "addMonument";
+
+        model.addAttribute("bodyContent","addMonument");
+        return "master-template";
     }
 
     @PostMapping("/save")
@@ -130,16 +135,21 @@ public class MonumentController {
                                String id,
                                Model model){
         monumentService.saveMonument(nameMk, nameEn, city, region, municipality, suburb, longitude, latitude, address, Long.parseLong(id));
-        return "redirect:/monuments";
+
+        model.addAttribute("bodyContent","redirect:/monuments");
+        return "master-template";
     }
 
     @GetMapping("/add")
     public String getAddPage(HttpSession session, Model model){
 
-        if (!Objects.equals((String) session.getAttribute("role"), "ADMIN"))
-            return "redirect:/monuments";
+        if (!Objects.equals((String) session.getAttribute("role"), "ADMIN")){
+            model.addAttribute("bodyContent","redirect:/monuments");
+            return "master-template";
+        }
 
-        return "addMonument";
+        model.addAttribute("bodyContent","addMonument");
+        return "master-template";
     }
     @PostMapping("/add_review/{monumentId}")
     public String reviewBook(@PathVariable Long monumentId, Model model){

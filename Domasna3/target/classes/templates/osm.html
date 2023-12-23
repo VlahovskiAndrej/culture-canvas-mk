@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Filter</title>
+    <title>CCMK | Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
             integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/osmStyle.css">
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/css/osm.css}" />
 
 </head>
 
@@ -32,14 +33,16 @@
                                 <label for="distance" style="display: block;">Enter distance (km)</label>
                                 <input id="distance" type="number" name="distance" class="form-control">
                             </div>
+<!--                            <button type="submit" class="btn btn-primary mt-auto" >Search</button>-->
+
                         </div>
-                        <div class="d-flex flex-column">
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary mt-auto" id="searchButton">Search</button>
-                            </div>
+<!--                        <div class="d-flex flex-column">-->
+<!--                            <div class="form-group">-->
+                                <button type="submit" class="btn btn-primary mt-auto" style="margin-bottom: 16px; margin-left: 10px" id="searchButton">Search</button>
+<!--                            </div>-->
                             <input id="latitude" type="hidden" name="latitude">
                             <input id="longitude" type="hidden" name="longitude">
-                        </div>
+<!--                        </div>-->
                     </form>
 
                 </div>

@@ -39,12 +39,12 @@
     </style>
 </head>
 <body>
-<header th:replace="fragments/header"/>
+<header th:replace="fragments/header"></header>
 
-<section th:include="${bodyContent}">
+<section style="min-height: 540px;" th:include="${bodyContent}">
 
 </section>
 
-<footer th:replace="fragments/footer"/>
+<footer th:replace="fragments/footer"></footer>
 </body>
 </html>

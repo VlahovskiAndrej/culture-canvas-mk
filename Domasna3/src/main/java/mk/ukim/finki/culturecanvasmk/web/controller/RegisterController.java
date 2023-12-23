@@ -1,6 +1,5 @@
 package mk.ukim.finki.culturecanvasmk.web.controller;
 
-import mk.ukim.finki.culturecanvasmk.model.User;
 import mk.ukim.finki.culturecanvasmk.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,15 +18,20 @@ public class RegisterController {
 
     @GetMapping
     public String showRegistrationForm(Model model) {
-        return "register";
+        model.addAttribute("bodyContent","register");
+        return "master-template";
     }
 
 
     @PostMapping
     public String registerUser(String firstName, String lastName, String username, String password, Model model) {
         if (userService.registerUser(firstName, lastName, username, password)){
-            return "redirect:/login";
+
+            model.addAttribute("bodyContent","redirect:/login");
+            return "master-template";
         }
-        return "register";
+
+        model.addAttribute("bodyContent","register");
+        return "master-template";
     }
 }

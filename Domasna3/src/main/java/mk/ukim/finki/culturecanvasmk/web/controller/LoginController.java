@@ -7,10 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.Optional;
 
 @Controller
 public class LoginController {
@@ -23,7 +20,8 @@ public class LoginController {
 
     @GetMapping("/login")
     public String getLoginPage(Model model){
-        return "login";
+        model.addAttribute("bodyContent","login");
+        return "master-template";
     }
 
     @PostMapping("/login")
@@ -36,10 +34,13 @@ public class LoginController {
             session.setAttribute("username", username);
             session.setAttribute("role", user.getRole());
 
-            return "redirect:/monuments";
+            model.addAttribute("bodyContent","redirect:/monuments");
+            return "master-template";
         } else {
             model.addAttribute("error", "Invalid username or password");
-            return "login";
+
+            model.addAttribute("bodyContent","login");
+            return "master-template";
         }
     }
 
@@ -47,7 +48,9 @@ public class LoginController {
     public String Logout(HttpSession session, Model model){
         session.setAttribute("username", "");
         session.setAttribute("role","");
-        return "login";
+
+        model.addAttribute("bodyContent","login");
+        return "master-template";
     }
 
 }
