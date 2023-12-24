@@ -31,6 +31,8 @@
 <!--    </tr>-->
 <!--    </tbody>-->
 <!--  </table>-->
+<div>
+  <div>
   <ul th:each="review : ${reviews}">
     <li id="review-listing">
       <div class="card bg-light mb-3 w-100">
@@ -73,15 +75,24 @@
           <h5 class="card-title" th:text="${review.getDescription()}"></h5>
         </div>
         <div>
-          <form th:if="${session.role eq 'ADMIN'}" th:action="@{'/review/delete/{monumentId}' (monumentId=${monument.getId()})}" th:method="POST">
+          <form th:if="${session.role eq 'ADMIN'}" th:action="@{'/review/delete/{monumentId}' (monumentId=${monument.getId()})}" th:method="POST" style="display: inline">
             <!-- <button class="btn btn-primary" type="submit">Show Reviews</button> -->
             <input class="btn btn-primary" type="submit" value="Delete review">
             <input type="hidden" th:value="${review.getId()}" name="review_id">
           </form>
+
         </div>
       </div>
     </li>
   </ul>
+  </div>
+  <div style="text-align: center">
+    <form  th:action="@{'/monuments'}">
+      <input class="btn btn-secondary" type="submit" value="Back">
+    </form>
+  </div>
+  </div>
+
 <!--</div>-->
 
 

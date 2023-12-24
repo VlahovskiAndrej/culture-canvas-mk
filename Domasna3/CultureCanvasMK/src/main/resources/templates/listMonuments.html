@@ -33,7 +33,7 @@
             <input class="btn btn-primary" type="submit" value="Submit" id="submit-btn">
         </form>
 
-        <div>
+        <div th:if="${monuments.size()>0}">
             <ul th:each="monument : ${monuments}">
                 <div id="box">
 
@@ -53,10 +53,10 @@
                             <input class="btn btn-primary" type="submit" value="Edit">
                         </form>
 
-                        <form th:if="${session.role eq 'ADMIN'}" th:action="@{'/monuments/{id}/delete' (id=${monument.getId()})}" th:method="GET">
+                        <form th:if="${session.role eq 'ADMIN'}" th:action="@{'/monuments/{id}/delete' (id=${monument.getId()})}" th:method="POST">
                             <input class="btn btn-danger" type="submit" value="Delete">
                         </form>
-                        <form th:action="@{'/monuments/add_review/{monumentId}' (monumentId=${monument.getId()})}" th:method="POST">
+                        <form th:if="${session.role eq 'ADMIN' or session.role eq 'USER'}" th:action="@{'/monuments/add_review/{monumentId}' (monumentId=${monument.getId()})}" th:method="POST">
                             <!--<button class="btn btn-primary" type="submit">Add Review</button>-->
                             <input class="btn btn-primary" type="submit" value="Add Review">
                         </form>
@@ -73,6 +73,9 @@
                 </div>
             </ul>
 
+        </div>
+        <div th:if="${monuments.size()==0}" style="text-align: center">
+            <h3>Sorry... No places matched your criteria</h3>
         </div>
 
     </div>

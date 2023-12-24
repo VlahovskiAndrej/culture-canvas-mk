@@ -95,16 +95,17 @@ public class MonumentController {
         return monumentResponse;
     }
 
-    @GetMapping("/{id}/delete")
+    @PostMapping("/{id}/delete")
     public String deleteMonument(@PathVariable long id,HttpSession session, Model model){
 
-        if (session.getAttribute("role") != "ADMIN"){
-            return "redirect:/monuments";
-        }
+//        if (session.getAttribute("role") != "ADMIN"){
+//            return "redirect:/monuments";
+//        }
 
         monumentService.deleteById(id);
-        model.addAttribute("bodyContent","redirect:/monuments");
-        return "master-template";
+      //  model.addAttribute("bodyContent","redirect:/monuments");
+        //return "master-template";
+        return "redirect:/monuments";
     }
 
     @GetMapping("/{id}/edit")
