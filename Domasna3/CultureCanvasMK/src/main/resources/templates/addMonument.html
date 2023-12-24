@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/css/addMonument.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/css/addMonument.css}" />
+    <meta charset="UTF-8">
+
+    <title>Add a monument</title>
+</head>
+<body>
+
+    <div th:if="${monument != null}">
+        <form th:action="@{/monuments/save}" method="post">
+
+            <div class="add-form">
+
+                <h1 th:text="'Edit monument #' + ${monument.getId()}"></h1>
+
+                <input type="text" th:name="id" th:value="${monument.getId()}" hidden>
+
+                <div class="mb-3">
+                    <label class="form-label">Name MK: </label>
+                    <input class="form-control" type="text" th:name="nameMk" th:value="${monument.getNameMk()}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Name EN: </label>
+                    <input class="form-control" type="text" th:name="nameEn" th:value="${monument.getNameEn()}">
+
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">City: </label>
+                    <input class="form-control" type="text" th:name="city" th:value="${monument.getCity()}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Region: </label>
+                    <input class="form-control" type="text" th:name="region" th:value="${monument.getRegion()}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Municipality: </label>
+                    <input class="form-control" type="text" th:name="municipality" th:value="${monument.getMunicipality()}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Suburb: </label>
+                    <input class="form-control" type="text" th:name="suburb" th:value="${monument.getSuburb()}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Longitude: </label>
+                    <input class="form-control" type="text" th:name="longitude" th:value="${monument.getLongitude()}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Latitude: </label>
+                    <input class="form-control" type="text" th:name="latitude" th:value="${monument.getLatitude()}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Address: </label>
+                    <input class="form-control" type="text" th:name="address" th:value="${monument.getAddress()}">
+                </div>
+
+                <button class="btn btn-primary" type="submit">Save Changes</button>
+            </div>
+        </form>
+    </div>
+
+    <div th:if="${monument == null}" >
+        <form th:action="@{/monuments/save}" method="post">
+
+
+            <div class="add-form">
+
+                <h1>Add new Monument</h1>
+
+                <input type="text" th:name="id" th:value="0" hidden>
+
+                <div class="mb-3">
+                    <label class="form-label">Name MK: </label>
+                    <input class="form-control" type="text" th:name="nameMk">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Name EN: </label>
+                    <input class="form-control" type="text" th:name="nameEn">
+
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">City: </label>
+                    <input class="form-control" type="text" th:name="city">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Region: </label>
+                    <input class="form-control" type="text" th:name="region">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Municipality: </label>
+                    <input class="form-control" type="text" th:name="municipality">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Suburb: </label>
+                    <input class="form-control" type="text" th:name="suburb">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Longitude: </label>
+                    <input class="form-control" type="text" th:name="longitude">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Latitude: </label>
+                    <input class="form-control" type="text" th:name="latitude">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Address: </label>
+                    <input class="form-control" type="text" th:name="address">
+                </div>
+
+                <button class="btn btn-primary" type="submit">Add Monument</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

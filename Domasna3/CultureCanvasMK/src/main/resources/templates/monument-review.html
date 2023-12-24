@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/css/monumentReview.css}" />
+    <title>Review</title>
+
+</head>
+<body>
+
+<form th:action="@{'/review/add/{monumentId}' (monumentId = ${monument.getId()})}" th:method="POST">
+
+  <label for="reviewDescription">Review Description:</label>
+  <textarea  id="reviewDescription" name="review_description"></textarea>
+  </br>
+  <label for="rating">Rating (1-5):</label>
+  <input type="number" min="1" max="5" step="1" id="rating" name="score"></br>
+
+    <input id='submit-btn' class="btn btn-secondary" type="submit" value="Submit review">
+</form>
+</body>
+</html>

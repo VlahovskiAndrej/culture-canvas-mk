@@ -1,0 +1,15 @@
+body {
+    background-color: #f8f9fa;
+}
+
+
+#login-form{
+    margin: 2% 20%;
+    padding: 5%;
+    width: 50%;
+    border: 1px solid darkblue;
+    border-radius: 15px;
+
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
