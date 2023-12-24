@@ -47,7 +47,7 @@ public class ReviewController {
 
     }
     @PostMapping("/delete/{monumentId}")
-    public String deleteReview(@PathVariable Long monumentId, @RequestParam Long review_id, HttpSession session)
+    public String deleteReview(@PathVariable Long monumentId, @RequestParam Long review_id, HttpSession session, Model model)
     {
         if (!Objects.equals((String) session.getAttribute("role"), "ADMIN"))
             return "redirect:/monuments";
@@ -55,6 +55,7 @@ public class ReviewController {
         Monument monument = monumentService.findById(monumentId);
         monumentService.deleteReviewById(monumentId,review_id);
 
-        return "redirect:/review/show/{monumentId}";
+//        return "redirect:/review/show/{monumentId}";
+        return "redirect:/monuments";
     }
 }
