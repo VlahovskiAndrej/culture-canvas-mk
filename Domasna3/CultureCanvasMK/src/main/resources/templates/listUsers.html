@@ -4,7 +4,7 @@
         <h5 th:text="'Username: ' + ${user.getUsername()}" ></h5>
         <h5 th:text="'Role: ' + ${user.getRole()}"></h5>
         <div>
-            <form th:if="${session.role eq 'ADMIN'}" th:action="@{'/users/delete/{userId}' (userId=${user.getId()})}" th:method="POST">
+            <form sec:authorize="hasRole('ROLE_ADMIN')" th:action="@{'/users/delete/{userId}' (userId=${user.getId()})}" th:method="POST">
                 <!-- <button class="btn btn-primary" type="submit">Show Reviews</button> -->
                 <input class="btn btn-danger" type="submit" value="Delete account">
             </form>

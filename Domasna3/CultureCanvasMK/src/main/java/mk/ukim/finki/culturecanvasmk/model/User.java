@@ -15,12 +15,15 @@ public class User {
 
     private String password;
 
-    private String role;
+    @Enumerated(value = EnumType.STRING)
+    private Role role;
+
 
     public User() {}
-    public User(String username, String password, String role) {
+    public User(String username, String password, Role role) {
         this.username = username;
         this.password = password;
         this.role = role;
     }
+
 }
