@@ -1,10 +1,11 @@
 package mk.ukim.finki.culturecanvasmk.service;
 
 import mk.ukim.finki.culturecanvasmk.model.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
 
-public interface UserService {
+public interface UserService extends UserDetailsService {
 
     List<User> listUsers();
 

@@ -1,19 +1,26 @@
 package mk.ukim.finki.culturecanvasmk.service.Impl;
 
+import mk.ukim.finki.culturecanvasmk.model.Role;
 import mk.ukim.finki.culturecanvasmk.model.User;
 import mk.ukim.finki.culturecanvasmk.repository.jpa.UserRepository;
 import mk.ukim.finki.culturecanvasmk.service.UserService;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService, UserDetailsService {
 
-    UserRepository userRepository;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
 
@@ -35,7 +42,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public Boolean registerUser(String firstName, String lastName, String username, String password) {
         if (findByUsernameAndPassword(username, password) == null){
-            userRepository.save(new User(username, password, "USER"));
+            userRepository.save(new User(username, passwordEncoder.encode(password), Role.USER));
             return true;
         }
         return false;
@@ -44,5 +51,15 @@ public class UserServiceImpl implements UserService {
     @Override
     public void deleteById(Long userId) {
         userRepository.deleteById(userId);
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userRepository.findByUsername(username).orElseThrow(()->new UsernameNotFoundException(username));
+        return org.springframework.security.core.userdetails.User.builder()
+                .username(user.getUsername())
+                .password(user.getPassword())
+                .authorities("ROLE_" + user.getRole().toString())
+                .build();
     }
 }

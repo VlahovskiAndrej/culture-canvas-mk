@@ -3,6 +3,10 @@ package mk.ukim.finki.culturecanvasmk.bootstrap;
 
 import jakarta.annotation.PostConstruct;
 import mk.ukim.finki.culturecanvasmk.model.Monument;
+import mk.ukim.finki.culturecanvasmk.model.Role;
+import mk.ukim.finki.culturecanvasmk.model.User;
+import mk.ukim.finki.culturecanvasmk.repository.jpa.UserRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.io.FileInputStream;
@@ -15,12 +19,18 @@ import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
 
 import java.io.IOException;
-import java.util.stream.Collectors;
 
 @Component
 public class DataHandler {
     public static List<String[]> csvData;
     public static List<Monument> monumentList;
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+
+    public DataHandler(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @PostConstruct
     public void init() {
@@ -28,7 +38,10 @@ public class DataHandler {
 
 //    name,nameEn,region,city,municipality,postcode,suburb,lat,lon,address,,,,,,
         monumentList = csvData.stream().skip(1).map(r -> new Monument(r[0], r[1], r[2], r[3], r[4], r[5], r[6], r[7], r[8], r[9])).toList();
-
+        if (userRepository.count() == 0) {
+            userRepository.save(
+                    new User("admin", passwordEncoder.encode("admin"), Role.ADMIN));
+        }
     }
 
     private static List<String[]> readCsvFile() {
@@ -40,8 +53,6 @@ public class DataHandler {
         }
         return data;
     }
-
-
 
 
 }

@@ -32,7 +32,7 @@ public class LoginController {
             User user = userService.findByUsernameAndPassword(username, password);
 
             session.setAttribute("username", username);
-            session.setAttribute("role", user.getRole());
+            session.setAttribute("role", user.getRole().name());
 
 //            return "redirect:/monuments";
             model.addAttribute("bodyContent","home");

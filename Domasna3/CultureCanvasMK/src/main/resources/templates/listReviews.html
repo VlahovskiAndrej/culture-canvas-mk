@@ -73,7 +73,7 @@
           <h5 class="card-title" th:text="${review.getDescription()}"></h5>
         </div>
         <div>
-          <form th:if="${session.role eq 'ADMIN'}" th:action="@{'/review/delete/{monumentId}' (monumentId=${monument.getId()})}" th:method="POST">
+          <form sec:authorize="hasRole('ROLE_ADMIN')" th:action="@{'/review/delete/{monumentId}' (monumentId=${monument.getId()})}" th:method="POST">
             <!-- <button class="btn btn-primary" type="submit">Show Reviews</button> -->
             <input class="btn btn-primary" type="submit" value="Delete review">
             <input type="hidden" th:value="${review.getId()}" name="review_id">

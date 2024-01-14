@@ -97,11 +97,6 @@ public class MonumentController {
 
     @GetMapping("/{id}/delete")
     public String deleteMonument(@PathVariable long id,HttpSession session, Model model){
-
-        if (session.getAttribute("role") != "ADMIN"){
-            return "redirect:/monuments";
-        }
-
         monumentService.deleteById(id);
         model.addAttribute("bodyContent","redirect:/monuments");
         return "master-template";
@@ -109,11 +104,6 @@ public class MonumentController {
 
     @GetMapping("/{id}/edit")
     public String getEditPage(@PathVariable long id, HttpSession session, Model model){
-
-        if (!Objects.equals((String) session.getAttribute("role"), "ADMIN")){
-            return "redirect:/monuments";
-        }
-
         model.addAttribute("monument", monumentService.findById(id));
 
         model.addAttribute("bodyContent","addMonument");
@@ -139,11 +129,6 @@ public class MonumentController {
 
     @GetMapping("/add")
     public String getAddPage(HttpSession session, Model model){
-
-        if (!Objects.equals((String) session.getAttribute("role"), "ADMIN")){
-            return "redirect:/monuments";
-        }
-
         model.addAttribute("bodyContent","addMonument");
         return "master-template";
     }
