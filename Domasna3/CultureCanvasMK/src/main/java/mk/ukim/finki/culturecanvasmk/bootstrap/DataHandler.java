@@ -39,8 +39,12 @@ public class DataHandler {
 //    name,nameEn,region,city,municipality,postcode,suburb,lat,lon,address,,,,,,
         monumentList = csvData.stream().skip(1).map(r -> new Monument(r[0], r[1], r[2], r[3], r[4], r[5], r[6], r[7], r[8], r[9])).toList();
         if (userRepository.count() == 0) {
-            userRepository.save(
-                    new User("admin", passwordEncoder.encode("admin"), Role.ADMIN));
+            User user = new User("admin",
+                    passwordEncoder.encode("admin"),
+                    "culturecanvasmk@gmail.com",
+                    Role.ADMIN, "");
+            user.setRegistered(true);
+            userRepository.save(user);
         }
     }
 

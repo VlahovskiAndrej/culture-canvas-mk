@@ -1,5 +1,6 @@
 package mk.ukim.finki.culturecanvasmk.config;
 
+import mk.ukim.finki.culturecanvasmk.model.User;
 import mk.ukim.finki.culturecanvasmk.service.UserService;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -31,7 +32,10 @@ public class CustomUsernamePasswordAuthenticationProvider implements Authenticat
         }
 
         UserDetails userDetails = this.userService.loadUserByUsername(username);
-
+        User user = userService.findByUsernameAndPassword(userDetails.getUsername(), userDetails.getPassword());
+        if(!user.isRegistered()){
+            throw new BadCredentialsException("User does not exist");
+        }
         if (!passwordEncoder.matches(password, userDetails.getPassword())) {
             throw new BadCredentialsException("Password is incorrect!");
         }

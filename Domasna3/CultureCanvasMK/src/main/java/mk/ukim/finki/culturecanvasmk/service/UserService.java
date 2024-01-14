@@ -13,7 +13,9 @@ public interface UserService extends UserDetailsService {
 
     User findByUsernameAndPassword(String username, String password);
 
-    Boolean registerUser(String firstName, String lastName, String username, String password);
+    Boolean registerUser(String firstName, String lastName, String username, String email, String password, String token);
 
     void deleteById(Long userId);
+
+    boolean confirmRegistration(String token);
 }

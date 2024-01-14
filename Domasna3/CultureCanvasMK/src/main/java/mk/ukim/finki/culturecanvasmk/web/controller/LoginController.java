@@ -19,7 +19,10 @@ public class LoginController {
     }
 
     @GetMapping("/login")
-    public String getLoginPage(Model model){
+    public String getLoginPage(@RequestParam(required = false) String token, Model model){
+        if(token != null){
+            userService.confirmRegistration(token);
+        }
         model.addAttribute("bodyContent","login");
         return "master-template";
     }
@@ -30,13 +33,17 @@ public class LoginController {
         if (userService.checkUsernameAndPassword(username, password)) {
 
             User user = userService.findByUsernameAndPassword(username, password);
-
-            session.setAttribute("username", username);
-            session.setAttribute("role", user.getRole().name());
+            if(user.isRegistered()){
+                session.setAttribute("username", username);
+                session.setAttribute("role", user.getRole().name());
 
 //            return "redirect:/monuments";
-            model.addAttribute("bodyContent","home");
-            return "master-template";
+                model.addAttribute("bodyContent","home");
+                return "master-template";
+            }else {
+                model.addAttribute("bodyContent","login");
+                return "master-template";
+            }
         } else {
             model.addAttribute("error", "Invalid username or password");
 

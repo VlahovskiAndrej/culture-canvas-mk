@@ -10,6 +10,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -40,9 +42,9 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     @Override
-    public Boolean registerUser(String firstName, String lastName, String username, String password) {
+    public Boolean registerUser(String firstName, String lastName, String username, String email,  String password, String token) {
         if (findByUsernameAndPassword(username, password) == null){
-            userRepository.save(new User(username, passwordEncoder.encode(password), Role.USER));
+            userRepository.save(new User(username, passwordEncoder.encode(password), email, Role.USER, token));
             return true;
         }
         return false;
@@ -61,5 +63,21 @@ public class UserServiceImpl implements UserService, UserDetailsService {
                 .password(user.getPassword())
                 .authorities("ROLE_" + user.getRole().toString())
                 .build();
+    }
+
+    public boolean confirmRegistration(String token) {
+        // Validate the token and mark the user as registered
+        User user = userRepository.findByConfirmationToken(token);
+        if (user != null && !user.isRegistered() && isValidTokenExpiration(user.getConfirmationTokenExpiration())) {
+            user.setRegistered(true);
+            userRepository.save(user);
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isValidTokenExpiration(LocalDate expirationDate) {
+        // Check if the token expiration date is valid (not expired)
+        return expirationDate != null && expirationDate.isAfter(LocalDate.now());
     }
 }
