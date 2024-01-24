@@ -22,8 +22,13 @@ public class EmailConfirmationService {
         Email from = new Email("culturecanvasmk@gmail.com");
         Email to = new Email(toEmail);
         String subject = "Confirm Your Registration";
-        String confirm = "<a href="+confirmationLink+">Confirm Your Account</a>";
-        Content content = new Content("text/html", "Please click the following link to confirm your registration: \n" + confirm);
+        String confirm = "<a href=" + confirmationLink + ">Confirm Your Account</a>";
+        Content content = new Content("text/html", "<p>Hello,</p>" +
+                "<p>Thank you for registering with CultureCanvasMK.</p>" +
+                "<p>Please click the following link to confirm your registration: </p>" + confirm
+                + "<p>This link will expire in 48 hours</p>"
+                + "<p>If you didn't request this, please ignore this email. Your account will not be confirmed.</p>");
+
         Mail mail = new Mail(from, subject, to, content);
 
         SendGrid sg = new SendGrid(sendGridApiKey);
