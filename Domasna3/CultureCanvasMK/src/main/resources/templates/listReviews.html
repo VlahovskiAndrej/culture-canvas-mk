@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:sec="http://www.w3.org/1999/xhtml">
 <head>
 
   <!-- Required meta tags -->
@@ -14,29 +14,17 @@
 </head>
 
 <body>
-<!--<div class="container jumbotron">-->
 
-    <h1 th:text="${monument.getNameMk()} + ' - Reviews:'"></h1>
-<!--  <table >-->
-<!--    <thead>-->
-<!--    <tr>-->
-<!--      <th>Description </th>-->
-<!--      <th id="score-th">Score</th>-->
-<!--    </tr>-->
-<!--    </thead>-->
-<!--    <tbody>-->
-<!--    <tr th:each="review : ${reviews}">-->
-<!--      <td th:text="${review.getDescription()}"></td>-->
-<!--      <td th:text="${review.getScore()}"></td>-->
-<!--    </tr>-->
-<!--    </tbody>-->
-<!--  </table>-->
-  <ul th:each="review : ${reviews}">
+<div class="container">
+
+  <div class="text-center">
+    <h1 th:text="${monument.getNameMk()} "></h1>
+    <h2>Reviews</h2>
+  </div>
+  <ul th:each="review : ${reviews}" th:if="${reviews.size() > 0}" class="list-unstyled d-flex justify-content-center">
     <li id="review-listing">
       <div class="card bg-light mb-3 w-100">
         <div class="card-header">
-          <!--                <span th:text="${review.getScore()}"></span>-->
-
           <div th:if="${review.getScore() == 1}">
             <i style = "color:#ffcb00;" class="bi bi-star-fill"></i>
           </div>
@@ -82,8 +70,14 @@
       </div>
     </li>
   </ul>
-<!--</div>-->
 
+  <div th:if="${reviews.size() == 0}" class="text-center m-auto card bg-light w-50 d-flex justify-content-center">
+      <h4 class="m-3">
+        No reviews available for this monument
+      </h4>
+  </div>
+
+</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

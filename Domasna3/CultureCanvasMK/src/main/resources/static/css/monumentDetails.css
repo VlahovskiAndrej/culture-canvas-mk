@@ -39,3 +39,15 @@ body {
 #submit-btn:hover {
     background: lightskyblue;
 }
+
+#box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+h1, h3, h4, h5 {
+    color: #6278a6;
+}
