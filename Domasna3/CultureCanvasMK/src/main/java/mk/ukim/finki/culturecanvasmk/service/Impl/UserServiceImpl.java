@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService, UserDetailsService {
@@ -43,7 +44,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     @Override
     public Boolean registerUser(String firstName, String lastName, String username, String email,  String password, String token) {
-        if (findByUsernameAndPassword(username, password) == null){
+        if (findByUsername(username).isEmpty()){
             userRepository.save(new User(username, passwordEncoder.encode(password), email, Role.USER, token));
             return true;
         }
@@ -74,6 +75,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public Optional<User> findByUsername(String username) {
+        return userRepository.findByUsername(username);
     }
 
     private boolean isValidTokenExpiration(LocalDate expirationDate) {

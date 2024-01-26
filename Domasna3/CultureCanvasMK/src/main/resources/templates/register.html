@@ -28,6 +28,7 @@
         <div class="mb-3">
             <label class="form-label" for="username">Username:</label>
             <input class="form-control" type="text" id="username" th:name="username" required>
+            <p th:if="${hasError}" class="text-danger" th:text="${error}"></p>
         </div>
 
         <div class="mb-3">
@@ -43,8 +44,5 @@
         <p>Already have an account? <a href="/login">login now!</a></p>
     </div>
 </form>
-<p th:if="${error}" style="color: red" th:text="${error}"></p>
-
-
 </body>
 </html>

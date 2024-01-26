@@ -37,7 +37,7 @@ public class WebSecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/monuments/*/edit", "/monuments/*/delete", "/monuments/add", "/review/delete/*", "/users/delete/*").hasRole("ADMIN")
-                        .requestMatchers("/review/*")
+                        .requestMatchers("/review/*", "/monuments/add_review/*")
                         .authenticated()
                         .anyRequest()
                         .permitAll()

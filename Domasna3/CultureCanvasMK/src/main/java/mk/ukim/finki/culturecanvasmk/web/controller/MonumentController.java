@@ -36,7 +36,7 @@ public class MonumentController {
         model.addAttribute("role", role);
 
         Page<Monument> monumentsPage;
-        if (city == null || city.isEmpty()) city="All";
+        if (Objects.equals(city, "null") || city.isEmpty()) city="All";
 
         if (searchMonuments == null && Objects.equals(city, "All")) {
             monumentsPage = monumentService.listMonumentsPageable(PageRequest.of(page, size));

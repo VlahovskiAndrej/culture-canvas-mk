@@ -46,6 +46,8 @@ public class RegisterController {
         }
 
         model.addAttribute("bodyContent","register");
+        model.addAttribute("hasError", true);
+        model.addAttribute("error", "The username already exists");
         return "master-template";
     }
 }

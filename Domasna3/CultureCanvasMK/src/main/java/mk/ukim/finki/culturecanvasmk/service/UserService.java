@@ -4,6 +4,7 @@ import mk.ukim.finki.culturecanvasmk.model.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface UserService extends UserDetailsService {
 
@@ -18,4 +19,5 @@ public interface UserService extends UserDetailsService {
     void deleteById(Long userId);
 
     boolean confirmRegistration(String token);
+    Optional<User> findByUsername(String username);
 }

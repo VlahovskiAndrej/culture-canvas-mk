@@ -2,21 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="" th:href="@{/css/monumentReview.css}" />
-    <title>Review</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/monumentReview.css"> <!-- Assuming your CSS file is in the correct path -->
 
+    <title>Review</title>
 </head>
 <body>
 
-<form th:action="@{'/review/add/{monumentId}' (monumentId = ${monument.getId()})}" th:method="POST">
+<div class="container">
+    <form th:action="@{'/review/add/{monumentId}' (monumentId = ${monument.getId()})}" th:method="POST">
 
-  <label for="reviewDescription">Review Description:</label>
-  <textarea  id="reviewDescription" name="review_description"></textarea>
-  </br>
-  <label for="rating">Rating (1-5):</label>
-  <input type="number" min="1" max="5" step="1" id="rating" name="score"></br>
+        <div class="form-group">
+            <label for="reviewDescription">Review Description:</label>
+            <textarea class="form-control" id="reviewDescription" name="review_description" rows="3"></textarea>
+        </div>
 
-    <input id='submit-btn' class="btn btn-secondary" type="submit" value="Submit review">
-</form>
+        <div class="form-group">
+            <label>Rating:</label>
+            <div class="rating" onclick="updateStars()">
+                <input type="radio" id="star5" name="score" value="1"><label class="bi bi-star" for="star5"></label>
+                <input type="radio" id="star4" name="score" value="2"><label class="bi bi-star" for="star4"></label>
+                <input type="radio" id="star3" name="score" value="3"><label class="bi bi-star" for="star3"></label>
+                <input type="radio" id="star2" name="score" value="4"><label class="bi bi-star" for="star2"></label>
+                <input type="radio" id="star1" name="score" value="5"><label class="bi bi-star" for="star1"></label>
+            </div>
+        </div>
+
+        <button id='submit-btn' class="btn btn-primary" type="submit">Submit Review</button>
+    </form>
+</div>
+
+<script>
+    function updateStars() {
+        const rating = document.querySelector('input[name="score"]:checked').value;
+        const stars = document.querySelectorAll('.rating label');
+
+        stars.forEach((star, index) => {
+            star.classList.remove('bi-star');
+        });
+
+        stars.forEach((star, index) => {
+            if (index < rating) {
+                star.classList.add('bi-star-fill');
+            }else{
+                star.classList.add('bi-star');
+            }
+        });
+
+    }
+</script>
+
 </body>
 </html>
