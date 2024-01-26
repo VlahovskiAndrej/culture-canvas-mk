@@ -8,9 +8,12 @@ import mk.ukim.finki.culturecanvasmk.model.exceptions.NoReviewFoundException;
 import mk.ukim.finki.culturecanvasmk.repository.jpa.MonumentRepository;
 import mk.ukim.finki.culturecanvasmk.repository.jpa.ReviewRepository;
 import mk.ukim.finki.culturecanvasmk.service.MonumentService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
@@ -79,8 +82,7 @@ public class MonumentServiceImpl implements MonumentService {
 
         if (id == 0) {   //CREATE NEW
             monumentRepository.save(new Monument(nameMk, nameEn, region, city, municipality, "1000", suburb, longitude, latitude, address));
-        }
-        else{   //EDIT
+        } else {   //EDIT
             Monument monument = monumentRepository.findById(id).orElse(null);
 
             assert monument != null;
@@ -96,24 +98,53 @@ public class MonumentServiceImpl implements MonumentService {
             monumentRepository.save(monument);
         }
     }
+
     @Override
     public void addReviewToMonument(Review review, Long monumentId) {
-        Monument monument = monumentRepository.findById(monumentId).orElseThrow(()->new MonumentNotFoundException(monumentId));
-        monumentRepository.addReviewToMonument(monument.getId(),review);
+        Monument monument = monumentRepository.findById(monumentId).orElseThrow(() -> new MonumentNotFoundException(monumentId));
+        monumentRepository.addReviewToMonument(monument.getId(), review);
     }
+
     @Override
     public List<Review> listAllReviewsForMonument(Long id) {
-        Monument monument = monumentRepository.findById(id).orElseThrow(()->new MonumentNotFoundException(id));
+        Monument monument = monumentRepository.findById(id).orElseThrow(() -> new MonumentNotFoundException(id));
         return monument.getReviews();
     }
 
     @Override
-    public void deleteReviewById(Long monument_id,Long review_id) {
-        Review review = reviewRepository.findById(review_id).orElseThrow(()-> new NoReviewFoundException(review_id));
-        Monument monument = monumentRepository.findById(monument_id).orElseThrow(()->new MonumentNotFoundException(monument_id));
+    public void deleteReviewById(Long monument_id, Long review_id) {
+        Review review = reviewRepository.findById(review_id).orElseThrow(() -> new NoReviewFoundException(review_id));
+        Monument monument = monumentRepository.findById(monument_id).orElseThrow(() -> new MonumentNotFoundException(monument_id));
         monument.getReviews().remove(review);
         reviewRepository.deleteById(review_id);
         monumentRepository.save(monument);
+    }
+
+    @Override
+    public Page<Monument> listMonumentsPageable(Pageable pageable) {
+        return monumentRepository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Monument> searchByNamePageable(String name, Pageable pageable) {
+        return monumentRepository.findAllByNameMkContainingIgnoreCaseOrNameEnContainingIgnoreCase(name, name, pageable);
+    }
+
+    @Override
+    public Page<Monument> filterByCityPageable(String city, Pageable pageable) {
+        return monumentRepository.findAllByCityIgnoreCase(city, pageable);
+    }
+
+    @Override
+    public Page<Monument> filterByCityAndNamePageable(String city, String nameMk, String nameEn, Pageable pageable) {
+        if (!Objects.equals(city, "All") && nameMk != null && nameEn != null && !nameMk.isEmpty() && !nameEn.isEmpty()){
+            return monumentRepository.findAllByCityIgnoreCaseAndNameMkContainingIgnoreCaseOrCityIgnoreCaseAndNameEnContainingIgnoreCase(city, nameMk, city, nameEn, pageable);
+        }else if(nameMk != null && nameEn != null && !nameMk.isEmpty() && !nameEn.isEmpty()){
+            return monumentRepository.findAllByNameMkContainingIgnoreCaseOrNameEnContainingIgnoreCase(nameMk, nameEn, pageable);
+        }else if(!Objects.equals(city, "All")){
+            return monumentRepository.findAllByCityIgnoreCase(city, pageable);
+        }
+        return this.listMonumentsPageable(pageable);
     }
 }
 

@@ -2,6 +2,8 @@ package mk.ukim.finki.culturecanvasmk.repository.jpa;
 
 import mk.ukim.finki.culturecanvasmk.model.Monument;
 import mk.ukim.finki.culturecanvasmk.model.Review;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -32,4 +34,9 @@ public interface MonumentRepository extends JpaRepository<Monument, Long> {
         monument.getReviews().add(review);
         save(monument);
     }
+
+    Page<Monument> findAllByNameMkContainingIgnoreCaseOrNameEnContainingIgnoreCase(String nameMk, String nameEn, Pageable pageable);
+
+    Page<Monument> findAllByCityIgnoreCase(String city, Pageable pageable);
+    Page<Monument> findAllByCityIgnoreCaseAndNameMkContainingIgnoreCaseOrCityIgnoreCaseAndNameEnContainingIgnoreCase(String city1, String nameMk, String city2, String nameEn, Pageable pageable);
 }
