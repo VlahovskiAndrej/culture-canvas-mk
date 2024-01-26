@@ -14,57 +14,58 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/osmStyle.css">
-    <link rel="stylesheet" type="text/css" href="" th:href="@{/css/osm.css}" />
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/css/osm.css}"/>
 
 </head>
 
-<div class="container">
-    <div class="jumbotron" id="map-container">
-        <h1 class="mt-3 mb-4">Find your destination</h1>
-        <div class="row">
-            <div class="col-md-8">
-                <div id="map" style="height: 500px; overflow: hidden; z-index:1;"></div>
+
+<div class="jumbotron" id="map-container">
+    <div class="row">
+        <div class="col-md-10">
+            <div id="map" style="height: 600px; overflow: hidden; z-index:1;"></div>
+        </div>
+        <div class="col-md-2 m-0 pr-0">
+            <h5 class="mt-3 mb-4">Find your destination</h5>
+            <div id="filterPart">
+                <form th:method="POST" th:action="@{/monuments/map}" id="filterForm" class="row">
+                    <div>
+                        <div class="form-group">
+                            <label for="distance" style="display: block;">Enter distance (km)</label>
+                            <input id="distance" type="number" name="distance" class="form-control">
+                        </div>
+
+
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-auto" style="margin-bottom: 16px; margin-left: 10px"
+                            id="searchButton">Search
+                    </button>
+
+                    <input id="latitude" type="hidden" name="latitude">
+                    <input id="longitude" type="hidden" name="longitude">
+
+                </form>
+
             </div>
-            <div class="col-md-4">
-                <div id="filterPart">
-                    <form th:method="POST" th:action="@{/monuments/map}" id="filterForm" class="row">
-                        <div>
-                            <div class="form-group">
-                                <label for="distance" style="display: block;">Enter distance (km)</label>
-                                <input id="distance" type="number" name="distance" class="form-control">
-                            </div>
-<!--                            <button type="submit" class="btn btn-primary mt-auto" >Search</button>-->
+            <div id="findRoutePart">
 
+                <form th:method="POST" th:action="@{/monuments/findRoute}" id="findRoute" class="row">
+                    <div class="d-flex flex-column">
+                        <div class="form-group">
+                            <span>Click on marker and find your route</span>
+                            <button type="submit" class="btn btn-primary mt-10" id="findRouteButton">Find Route
+                            </button>
                         </div>
-<!--                        <div class="d-flex flex-column">-->
-<!--                            <div class="form-group">-->
-                                <button type="submit" class="btn btn-primary mt-auto" style="margin-bottom: 16px; margin-left: 10px" id="searchButton">Search</button>
-<!--                            </div>-->
-                            <input id="latitude" type="hidden" name="latitude">
-                            <input id="longitude" type="hidden" name="longitude">
-<!--                        </div>-->
-                    </form>
-
-                </div>
-                <div id="findRoutePart">
-
-                    <form th:method="POST" th:action="@{/monuments/findRoute}" id="findRoute" class="row">
-                        <div class="d-flex flex-column">
-                            <div class="form-group">
-                                <span>Click on marker and find your route</span>
-                                <button type="submit" class="btn btn-primary mt-auto" id="findRouteButton">Find Route</button>
-                            </div>
-                            <input id="latitude1" type="hidden" name="latitude1">
-                            <input id="longitude1" type="hidden" name="longitude1">
-                            <input id="selectedLat" type="hidden" name="selectedLat">
-                            <input id="selectedLng" type="hidden" name="selectedLng">
-                        </div>
-                    </form>
-                </div>
+                        <input id="latitude1" type="hidden" name="latitude1">
+                        <input id="longitude1" type="hidden" name="longitude1">
+                        <input id="selectedLat" type="hidden" name="selectedLat">
+                        <input id="selectedLng" type="hidden" name="selectedLng">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
+
 
 <script th:inline="javascript" defer>
     var map = L.map('map').setView([41.6086, 21.7453], 8);
@@ -116,7 +117,7 @@
 
         marker.bindPopup(popupContent);
 
-        marker.on('click', function(e) {
+        marker.on('click', function (e) {
             document.getElementById('selectedLat').value = e.latlng.lat;
             document.getElementById('selectedLng').value = e.latlng.lng;
         });
@@ -124,9 +125,6 @@
 
 </script>
 
-<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"-->
-<!--        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
-<!--        crossorigin="anonymous"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>

@@ -2,6 +2,7 @@
     text-align: center;
     width: 100%;
     max-width: 100%;
+    padding: 0;
 }
 
 #filterPart, #findRoutePart {
@@ -10,7 +11,7 @@
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-height: 500px;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
 #filterForm {
@@ -113,4 +114,28 @@
 table tr:hover{
     background-color: lightgray;
     cursor: pointer;
+}
+
+.jumbotron{
+    margin-bottom: 0;
+}
+section{
+    padding: 0;
+}
+
+.row > div{
+    padding: 0;
+}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#findRouteButton{
+    margin-top: 10px;
 }
