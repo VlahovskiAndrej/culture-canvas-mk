@@ -1,3 +1,4 @@
+![alt text](https://github.com/VlahovskiAndrej/DIANS/blob/monument-images-impl/Domasna3/CultureCanvasMK/src/main/resources/static/images/logo.png?raw=true&&size=100x100)
 # Дизајн и архитектура на софтвер
 
 Линк кон видео за функционалности на апликацијата: <br  />
@@ -14,4 +15,4 @@
 - проф. д-р Љупчо Антовски<br />
 - проф. д-р Петре Ламески<br />
 
-![alt text](https://github.com/VlahovskiAndrej/DIANS/blob/monument-images-impl/Domasna3/CultureCanvasMK/src/main/resources/static/images/logo.png?raw=true&&size=100x100)
+
