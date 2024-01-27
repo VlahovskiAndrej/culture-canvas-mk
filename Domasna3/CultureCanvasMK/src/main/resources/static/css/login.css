@@ -2,19 +2,16 @@ body {
     background-color: #f8f9fa;
 }
 #login-form{
-    margin: 2% 20%;
-    padding: 5%;
-    width: 50%;
-    border: 1px solid darkblue;
+    /*margin: 2% 20%;*/
+    padding: 10%;
+    /*border: 1px solid darkblue;*/
     border-radius: 15px;
-
+    /*width: 50%;*/
+    /*margin: 5%;*/
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-#login-form{
-
-    border: 2px solid #3b5998;
-    border-radius: 5px;
-    padding: 20px;
-
+.login-container{
+    /*padding: 10%;*/
+    padding: 20px 17%;
 }

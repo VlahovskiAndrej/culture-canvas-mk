@@ -1,18 +1,313 @@
 <head>
     <link rel="stylesheet" type="text/css" href="" th:href="@{/css/home.css}"/>
+    <style>
+        section{
+            padding: 0;
+            /*margin: 0;*/
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="" th:href="@{/css/contact.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/listMonuments.css}"/>
 </head>
-<div class="container jumbotron">
-    <div class="row">
-        <div class="col-md-6">
-            <img src="https://www.goway.com/media/uploads/europe/macedonia/church_of_st_john_ohrid_macedonia_1069118279.jpg"
-                 class="img-fluid" alt="Culture Canvas MK">
+<!--<img src="https://whatlauradidnext.com/wp-content/uploads/2023/07/kristijan-arsov-cglvZ6SMKTY-unsplash-edited.jpg" alt="" style="height: 91vh; width: 99.1vw">-->
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 70vh;">
+    <ol class="carousel-indicators" style="height: 70vh;">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+    </ol>
+    <div class="carousel-inner" style="height: 70vh;">
+        <div class="carousel-item" style="height: 70vh;">
+            <img class="first-slide" src="https://images.unsplash.com/photo-1629390548034-0b2b2f039444?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="First slide" style="height: 70vh; width: 100vw;">
+            <div class="container">
+                <div class="carousel-caption text-left">
+                    <h1>Lake Ohrid</h1>
+                    <p>Macedonia's allure is evident in Lake Ohrid, a stunning ancient lake surrounded by mountains and historic monasteries.</p>
+                    <p><a class="btn btn-lg btn-primary" th:href="@{/map}">View map</a></p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6">
-            <div class="text-center">
-                <h2>Welcome!</h2>
-                <h5 class="mb-4">Culture Canvas MK</h5>
-                <p class="lead">Welcome to the official Culture Canvas MK home page</p>
+        <div class="carousel-item active" style="height: 70vh;">
+            <img class="second-slide" src="https://images.unsplash.com/photo-1619165822730-07a0adf6d799?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Second slide" style="height: 70vh; width: 100vw; filter: brightness(70%);" >
+            <div class="container">
+                <div class="carousel-caption text-left">
+                    <h1>Matka National Park</h1>
+                    <p>Northern Macedonia's mountainous landscapes reveal Matka National Park, a haven of pristine nature. With dense forests, crystalline lakes, and diverse wildlife, the park beckons nature enthusiasts.</p>
+                    <p><a class="btn btn-lg btn-primary" href="/about" role="button">Learn more</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item" style="height: 70vh;">
+            <img class="third-slide" src="https://images.unsplash.com/photo-1623411478742-5fc63fd89dc1?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Third slide" style="height: 70vh; width: 100vw;">
+            <div class="container">
+                <div class="carousel-caption text-left">
+                    <h1>Skopje, Macedonia's capital</h1>
+                    <p>Skopje, Macedonia's capital, boasts a captivating blend of old and new. The Stone Bridge links the old bazaar to the modern city, with the Kale Fortress overlooking.</p>
+                    <p><a class="btn btn-lg btn-primary" href="/monuments" role="button">Browse gallery</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<hr>
+<div class="container marketing">
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Macedonia. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">In the heart of Macedonia lies the vibrant capital city of Skopje, where the Stone Bridge spans the Vardar River, connecting the old bazaar with the modern city center. The cityscape is a captivating blend of Ottoman and Byzantine architecture, with the Kale Fortress overlooking the bustling city below. Skopje's Macedonia Square, adorned with statues and monuments, celebrates the nation's history and cultural identity, creating a dynamic and visually stunning urban environment. As the sun sets, the city lights illuminate the Alexander the Great statue, standing tall in the heart of the square, casting a warm glow on the people gathered in this emblematic space.</p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="https://images.unsplash.com/photo-1642966399337-ea122f230f41?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTkwfHxtYWNlZG9uaWF8ZW58MHx8MHx8fDA%3D" data-holder-rendered="true">
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="container">
+    <h1 style="text-align: center; margin-top: 10px;">Most popular destinations</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" style="height: 160px" src="https://nezavisen.mk/wp-content/uploads/2019/09/dom-na-kultura-kisela-voda.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title">Дом на културата</h6>
+                    <p class="card-text" >City: Битола</p>
+                    <p class="card-text" >Location: Дом на Култура, Пеце Матичевски, 7000 Bitola, North Macedonia</p>
+                </div>
+                <div class="card-footer">
+                    <div class="row footer-buttons">
+                        <form th:action="@{'/about'}" th:method="GET">
+                            <button class="btn btn-secondary btn-sm" type="submit">Read more</button>
+                        </form>
+
+                        <form th:action="@{'/monuments'}" th:method="GET">
+                            <button class="btn btn-primary btn-sm" type="submit">Show Destinations</button>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="rating-section">
+                    <p class="rating-label">Rating:
+                        <span class="rating-value">7.4</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" style="height: 160px" src="https://www.muzika24.mk/wp-content/uploads/2021/01/Makedonska-opera-i-balet_opsta-so-natpis-MOB.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title">Македонска опера и балет</h6>
+                    <p class="card-text" >City: Skopje</p>
+                    <p class="card-text" >Location: Macedonian Opera and Ballet, Пајко Маало, 1000 Skopje, North Macedonia</p>
+                </div>
+                <div class="card-footer">
+                    <div class="row footer-buttons">
+                        <form th:action="@{'/about'}" th:method="GET">
+                            <button class="btn btn-secondary btn-sm" type="submit">Read more</button>
+                        </form>
+
+                        <form th:action="@{'/monuments'}" th:method="GET">
+                            <button class="btn btn-primary btn-sm" type="submit">Show Destinations</button>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="rating-section">
+                    <p class="rating-label">Rating:
+                        <span class="rating-value">8.0</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" style="height: 160px" src="https://pbs.twimg.com/media/FO2pg3IXsBAirfH?format=jpg&name=4096x4096" alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title">Театар Комедија</h6>
+                    <p class="card-text" >City: Skopje</p>
+                    <p class="card-text" >Location: Theater Comedy, Kliment Ohridski Boulevard, 1000 Skopje, North Macedonia</p>
+                </div>
+                <div class="card-footer">
+                    <div class="row footer-buttons">
+                        <form th:action="@{'/about'}" th:method="GET">
+                            <button class="btn btn-secondary btn-sm" type="submit">Read more</button>
+                        </form>
+
+                        <form th:action="@{'/monuments'}" th:method="GET">
+                            <button class="btn btn-primary btn-sm" type="submit">Show Destinations</button>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="rating-section">
+                    <p class="rating-label">Rating:
+                        <span class="rating-value">8.1</span>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+<hr>
+
+<div class="container marketing">
+    <div class="row featurette">
+    <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Macedonia. <span class="text-muted">See for yourself.</span></h2>
+        <p class="lead">Macedonia, a country nestled in the heart of the Balkan Peninsula, enchants visitors with its rich tapestry of natural beauty and historical treasures. The azure waters of Lake Ohrid, one of Europe's oldest and deepest lakes, reflect the surrounding mountains and ancient monasteries that adorn its shores. The cobblestone streets of Ohrid, a UNESCO World Heritage site, lead travelers through a living museum of medieval architecture, where the Ohrid Fortress stands proudly, offering panoramic views of the city and the lake. Macedonia's landscapes are adorned with picturesque vineyards and orchards, inviting travelers to savor the flavors of the region's renowned wines and fresh produce, creating a harmonious blend of nature and culture.Venturing into the mountainous landscapes of northern Macedonia reveals a realm of pristine nature and traditional villages. The Mavrovo National Park, with its sprawling forests, crystalline lakes, and diverse wildlife, offers a haven for nature enthusiasts and adventurers alike.</p>
+    </div>
+    <div class="col-md-5 order-md-1">
+        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/600x800/auto" alt="600x800" src="https://images.unsplash.com/photo-1611788497810-22d146c72cd2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjMyfHxtYWNlZG9uaWF8ZW58MHx8MHx8fDA%3D" data-holder-rendered="true">
+    </div>
+</div>
+</div>
+<hr>
+
+<div class="container">
+    <h1 style="text-align: center; margin-top: 10px;">New destinations</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" style="height: 160px" src="https://gdb.rferl.org/08530000-0a00-0242-50da-08daf95c8193_w1200_r1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title">Младински Културен Центар</h6>
+                    <p class="card-text" >City: Skopje</p>
+                    <p class="card-text" >Location: Youth Cultural Center, Kej Dimitar Vlahov, 1000 Skopje, North Macedonia</p>
+                </div>
+                <div class="card-footer">
+                    <div class="row footer-buttons">
+                        <form th:action="@{'/about'}" th:method="GET">
+                            <button class="btn btn-secondary btn-sm" type="submit">Read more</button>
+                        </form>
+
+                        <form th:action="@{'/monuments'}" th:method="GET">
+                            <button class="btn btn-primary btn-sm" type="submit">Show Destinations</button>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="rating-section">
+                    <p class="rating-label">Rating:
+                        <span class="rating-value">8.1</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" style="height: 160px" src="https://www.slobodenpecat.mk/wp-content/uploads/2022/10/%D0%B4%D0%BE%D0%BC-%D0%BD%D0%B0-%D0%B0%D1%80%D0%BC.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title">Дом на АРМ</h6>
+                    <p class="card-text" >City: Skopje</p>
+                    <p class="card-text" >Location: Army Hall Cultural Centre, Dimitrie Chupovski, 1000 Skopje, North Macedonia</p>
+                </div>
+                <div class="card-footer">
+                    <div class="row footer-buttons">
+                        <form th:action="@{'/about'}" th:method="GET">
+                            <button class="btn btn-secondary btn-sm" type="submit">Read more</button>
+                        </form>
+
+                        <form th:action="@{'/monuments'}" th:method="GET">
+                            <button class="btn btn-primary btn-sm" type="submit">Show Destinations</button>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="rating-section">
+                    <p class="rating-label">Rating:
+                        <span class="rating-value">6.8</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" style="height: 160px" src="data:image/jpeg;base64,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" alt="Card image cap">
+                <div class="card-body">
+                    <h6 class="card-title">Драмски Театар</h6>
+                    <p class="card-text" >City: Skopje</p>
+                    <p class="card-text" >Location: Драмски Театар, Шекспирова 15, 1000 Skopje, North Macedonia</p>
+                </div>
+                <div class="card-footer">
+                    <div class="row footer-buttons">
+                        <form th:action="@{'/about'}" th:method="GET">
+                            <button class="btn btn-secondary btn-sm" type="submit">Read more</button>
+                        </form>
+
+                        <form th:action="@{'/monuments'}" th:method="GET">
+                            <button class="btn btn-primary btn-sm" type="submit">Show Destinations</button>
+                        </form>
+                    </div>
+
+                </div>
+                <div class="rating-section">
+                    <p class="rating-label">Rating:
+                        <span class="rating-value">9.0</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="container jumbotron" style="border: none;">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="text-center" style="padding: 30px 50px;">
+                <h2>CONTACT US!</h2>
+                <h5 class="mb-4">Culture Canvas MK</h5>
+                <p class="lead" style="text-align: justify">Have questions or feedback? We're here to help! Reach out to us using the form below, and we'll get back to you promptly.</p>
+<!--                <p class="lead" style="text-align: justify">Thank you for considering us as your go-to source. Your satisfaction is our priority, and we're committed to making sure you have the information and support you need.</p>-->
+            </div>
+
+            <!--            <img id="contact-img" src="https://i.pinimg.com/originals/71/45/68/714568af5c034da6a9749dab40f26189.gif" alt="Your GIF">-->
+
+
+        </div>
+        <div class="col-md-6">
+            <form action="https://formspree.io/f/xqkredlj" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="Name" placeholder="Jon Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="From" placeholder="example@mail.com"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="Subject" placeholder="Your Email Subject"
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" name="Message" rows="4" placeholder="Your Message"
+                              required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary float-right">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onbeforeunload = () => {
+        for (const form of document.getElementsByTagName('form')) {
+            form.reset();
+        }
+    }
+</script>
