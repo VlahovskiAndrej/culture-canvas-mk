@@ -21,12 +21,7 @@ public class UserController {
 
     @GetMapping
     public String getUsersPage(HttpSession session, Model model){
-
-/*        if (!Objects.equals((String) session.getAttribute("role"), "ADMIN"))
-            return "redirect:/home";*/
-
         model.addAttribute("users", userService.listUsers());
-
         model.addAttribute("bodyContent", "listUsers");
         return "master-template";
     }
@@ -34,12 +29,7 @@ public class UserController {
     @PostMapping("/delete/{userId}")
     public String deleteReview(@PathVariable Long userId, HttpSession session)
     {
-/*        if (!Objects.equals((String) session.getAttribute("role"), "ADMIN"))
-            return "redirect:/monuments";*/
-
         userService.deleteById(userId);
-
         return "redirect:/users";
     }
-
 }

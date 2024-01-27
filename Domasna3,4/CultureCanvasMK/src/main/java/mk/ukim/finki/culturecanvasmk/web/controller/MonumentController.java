@@ -1,6 +1,5 @@
 package mk.ukim.finki.culturecanvasmk.web.controller;
 
-
 import jakarta.servlet.http.HttpSession;
 import mk.ukim.finki.culturecanvasmk.model.Monument;
 import mk.ukim.finki.culturecanvasmk.model.MonumentResponse;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @Controller
-//@RestController
 @RequestMapping("/monuments")
 public class MonumentController {
 
@@ -53,43 +51,6 @@ public class MonumentController {
         model.addAttribute("bodyContent", "listMonuments");
         return "master-template";
     }
-
-//    @PostMapping
-//    String searchBook(@RequestParam(required = false) String searchMonuments, String city, Model model) {
-//
-//        List<Monument> monuments = monumentService.searchByName(searchMonuments);
-//        if (!Objects.equals(city, "All"))
-//            monuments = monumentService.filterByCity(city);
-//
-//        model.addAttribute("monuments", monuments);
-//        model.addAttribute("bodyContent", "listMonuments");
-//        return "master-template";
-//    }
-//    @PostMapping
-//    String searchBook(@RequestParam(required = false) String searchMonuments,
-//                      String city,
-//                      @RequestParam(defaultValue = "0") int page,
-//                      @RequestParam(defaultValue = "15") int size,
-//                      Model model) {
-//
-//        Page<Monument> monumentsPage;
-//
-//        if (searchMonuments != null) {
-//            monumentsPage = monumentService.searchByNamePageable(searchMonuments, PageRequest.of(page, size));
-//        } else {
-//            monumentsPage = monumentService.listMonumentsPageable(PageRequest.of(page, size));
-//        }
-//
-//        if (!Objects.equals(city, "All"))
-//            monumentsPage = monumentService.filterByCityPageable(city, PageRequest.of(page, size));
-//
-//        model.addAttribute("monuments", monumentsPage.getContent());
-//        model.addAttribute("totalPages", monumentsPage.getTotalPages());
-//        model.addAttribute("currentPage", page);
-//
-//        model.addAttribute("bodyContent", "listMonuments");
-//        return "master-template";
-//    }
 
     @GetMapping("/{id}")
     public String getMonuments(@PathVariable long id, Model model) {
@@ -166,7 +127,6 @@ public class MonumentController {
                                String imageUrl,
                                Model model) {
         monumentService.saveMonument(nameMk, nameEn, city, region, municipality, suburb, longitude, latitude, address, Long.parseLong(id), imageUrl);
-
         return "redirect:/monuments";
     }
 

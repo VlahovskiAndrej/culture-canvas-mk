@@ -8,10 +8,7 @@ import java.util.List;
 
 public interface ReviewService {
 
-
     Review save(Review review);
-
-  //  List<Review> findAllByMonumentId(Long monumentId);
 
     void deleteById(Long reviewId);
 }

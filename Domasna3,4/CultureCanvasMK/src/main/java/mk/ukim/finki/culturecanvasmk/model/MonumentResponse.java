@@ -6,7 +6,6 @@ import java.util.List;
 
 @Data
 public class MonumentResponse {
-
     private List<Monument> monuments;
     private Double latitude;
     private Double longitude;

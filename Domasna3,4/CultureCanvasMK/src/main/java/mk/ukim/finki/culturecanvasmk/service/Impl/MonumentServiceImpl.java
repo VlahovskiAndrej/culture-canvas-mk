@@ -7,6 +7,7 @@ import mk.ukim.finki.culturecanvasmk.model.exceptions.MonumentNotFoundException;
 import mk.ukim.finki.culturecanvasmk.model.exceptions.NoReviewFoundException;
 import mk.ukim.finki.culturecanvasmk.repository.jpa.MonumentRepository;
 import mk.ukim.finki.culturecanvasmk.repository.jpa.ReviewRepository;
+import mk.ukim.finki.culturecanvasmk.service.MonumentFactory;
 import mk.ukim.finki.culturecanvasmk.service.MonumentService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,12 +22,13 @@ import java.util.stream.Collectors;
 public class MonumentServiceImpl implements MonumentService {
     private final MonumentRepository monumentRepository;
     private final ReviewRepository reviewRepository;
+    private final MonumentFactory monumentFactory;
 
-    public MonumentServiceImpl(MonumentRepository monumentRepository, ReviewRepository reviewRepository) {
+    public MonumentServiceImpl(MonumentRepository monumentRepository, ReviewRepository reviewRepository, MonumentFactory monumentFactory) {
         this.monumentRepository = monumentRepository;
         this.reviewRepository = reviewRepository;
+        this.monumentFactory = monumentFactory;
     }
-
 
     @Override
     public Monument findById(Long id) {
@@ -79,12 +81,11 @@ public class MonumentServiceImpl implements MonumentService {
 
     @Override
     public void saveMonument(String nameMk, String nameEn, String city, String region, String municipality, String suburb, String longitude, String latitude, String address, long id, String imageUrl) {
-
+        Monument monument;
         if (id == 0) {   //CREATE NEW
-            monumentRepository.save(new Monument(nameMk, nameEn, region, city, municipality, "1000", suburb, longitude, latitude, address, imageUrl));
+            monument = monumentFactory.createMonument(nameMk, nameEn, region, city, municipality, suburb, longitude, latitude, address, imageUrl);
         } else {   //EDIT
-            Monument monument = monumentRepository.findById(id).orElse(null);
-
+            monument = monumentRepository.findById(id).orElse(null);
             assert monument != null;
             monument.setNameEn(nameEn);
             monument.setNameMk(nameMk);
@@ -95,9 +96,8 @@ public class MonumentServiceImpl implements MonumentService {
             monument.setLatitude(latitude);
             monument.setAddress(address);
             monument.setImageUrl(imageUrl);
-
-            monumentRepository.save(monument);
         }
+        monumentRepository.save(monument);
     }
 
     @Override

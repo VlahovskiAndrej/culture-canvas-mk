@@ -9,7 +9,6 @@ import java.util.List;
 @Data
 @Entity
 public class Monument {
-//    name,nameEn,region,city,municipality,postcode,suburb,lat,lon,address,,,,,,
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

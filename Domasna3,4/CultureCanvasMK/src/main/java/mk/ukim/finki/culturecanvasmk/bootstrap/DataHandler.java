@@ -1,6 +1,5 @@
 package mk.ukim.finki.culturecanvasmk.bootstrap;
 
-
 import jakarta.annotation.PostConstruct;
 import mk.ukim.finki.culturecanvasmk.model.Monument;
 import mk.ukim.finki.culturecanvasmk.model.Role;
@@ -33,11 +32,13 @@ public class DataHandler {
         this.passwordEncoder = passwordEncoder;
     }
 
+//    CREATES ADMIN
+//    username: admin
+//    password: admin
     @PostConstruct
     public void init() {
         csvData = readCsvFile();
 
-//    name,nameEn,region,city,municipality,postcode,suburb,lat,lon,address,,,,,,
         monumentList = csvData.stream().skip(1).map(r -> new Monument(r[0], r[1], r[2], r[3], r[4], r[5], r[6], r[7], r[8], r[9], defaultImageUrl)).toList();
         if (userRepository.count() == 0) {
             User user = new User("admin",
@@ -48,10 +49,10 @@ public class DataHandler {
             userRepository.save(user);
         }
     }
-
+//  Reads the monuments from data.csv into Database
     private static List<String[]> readCsvFile() {
         List<String[]> data = new ArrayList<>();
-        try (CSVReader reader = new CSVReader(new InputStreamReader(new FileInputStream("src/main/resources/database/data.csv"), StandardCharsets.UTF_8))) {
+        try (CSVReader reader = new CSVReader(new InputStreamReader(new FileInputStream("src/main/resources/data/data.csv"), StandardCharsets.UTF_8))) {
             data = reader.readAll();
         } catch (IOException | CsvException e) {
             e.printStackTrace();

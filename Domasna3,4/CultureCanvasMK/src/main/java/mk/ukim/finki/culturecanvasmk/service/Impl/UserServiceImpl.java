@@ -26,7 +26,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         this.passwordEncoder = passwordEncoder;
     }
 
-
     @Override
     public List<User> listUsers() {
         return userRepository.findAll();

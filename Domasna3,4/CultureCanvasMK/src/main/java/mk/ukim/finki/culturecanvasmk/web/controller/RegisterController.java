@@ -30,7 +30,6 @@ public class RegisterController {
         return "master-template";
     }
 
-
     @PostMapping
     public String registerUser(String firstName, String lastName, String username, String email, String password, Model model) {
         String token = ConfirmationTokenGenerator.generateToken();
@@ -38,7 +37,7 @@ public class RegisterController {
             ConfirmationRequest confirmationRequest = new ConfirmationRequest(email,
                     ConfirmationTokenGenerator.BASE_URL + token);
 
-            // TODO: CHANGE URL AFTER HOST
+            // TODO: CHANGE URL AFTER HOSTING
             restTemplate.postForEntity("http://localhost:8080/confirmation/send-confirmation", confirmationRequest, String.class);
 
             model.addAttribute("bodyContent","confirm-registration");

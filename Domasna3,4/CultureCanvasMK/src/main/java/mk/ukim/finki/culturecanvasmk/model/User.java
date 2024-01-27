@@ -29,7 +29,6 @@ public class User {
     @Enumerated(value = EnumType.STRING)
     private Role role;
 
-
     public User() {}
     public User(String username, String password, String email, Role role, String confirmationToken) {
         this.username = username;

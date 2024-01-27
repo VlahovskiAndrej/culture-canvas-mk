@@ -49,7 +49,6 @@ public class ReviewController {
         Monument monument = monumentService.findById(monumentId);
         monumentService.deleteReviewById(monumentId,review_id);
 
-//        return "redirect:/review/show/{monumentId}";
         return "redirect:/monuments";
     }
 }
