@@ -50,9 +50,13 @@
 .card {
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 400px;
+    height: 500px;
     transition: transform 0.2s;
     overflow: hidden;
+}
+
+.card-body{
+    height: 220px;
 }
 
 .card:hover {
@@ -64,11 +68,13 @@
     font-weight: bold;
     margin-bottom: 10px;
     text-align: center;
+    /*max-height: 70px;*/
 }
 
 .card-text {
     color: #495057;
     margin-bottom: 10px;
+    /*height: 30px;*/
 }
 
 .card-footer {
@@ -83,7 +89,8 @@
 }
 
 .row > .col-md-4:nth-child(odd) .card, .row > .col-md-4:nth-child(odd) .card-footer {
-    background-color: #fcfbea;
+    /*background-color: #fcfbea;*/
+    background-color: #f6f6f6;
     border: 1px solid #ced5e0;
 }
 
@@ -110,5 +117,10 @@
 
 .rating-value {
     font-size: 1.2rem;
-    color: #007bff;
+    /*color: #007bff;*/
+    color: #011e3b;
+}
+
+.page-link{
+    color: black;
 }

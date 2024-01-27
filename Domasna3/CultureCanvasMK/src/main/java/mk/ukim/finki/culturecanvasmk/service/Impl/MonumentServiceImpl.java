@@ -78,10 +78,10 @@ public class MonumentServiceImpl implements MonumentService {
     }
 
     @Override
-    public void saveMonument(String nameMk, String nameEn, String city, String region, String municipality, String suburb, String longitude, String latitude, String address, long id) {
+    public void saveMonument(String nameMk, String nameEn, String city, String region, String municipality, String suburb, String longitude, String latitude, String address, long id, String imageUrl) {
 
         if (id == 0) {   //CREATE NEW
-            monumentRepository.save(new Monument(nameMk, nameEn, region, city, municipality, "1000", suburb, longitude, latitude, address));
+            monumentRepository.save(new Monument(nameMk, nameEn, region, city, municipality, "1000", suburb, longitude, latitude, address, imageUrl));
         } else {   //EDIT
             Monument monument = monumentRepository.findById(id).orElse(null);
 
@@ -94,6 +94,7 @@ public class MonumentServiceImpl implements MonumentService {
             monument.setLongitude(longitude);
             monument.setLatitude(latitude);
             monument.setAddress(address);
+            monument.setImageUrl(imageUrl);
 
             monumentRepository.save(monument);
         }

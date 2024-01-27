@@ -141,7 +141,7 @@ public class MonumentController {
     public String deleteMonument(@PathVariable long id, HttpSession session, Model model) {
         monumentService.deleteById(id);
         model.addAttribute("bodyContent", "redirect:/monuments");
-        return "master-template";
+        return "redirect:/monuments";
     }
 
     @GetMapping("/{id}/edit")
@@ -163,8 +163,9 @@ public class MonumentController {
                                String latitude,
                                String address,
                                String id,
+                               String imageUrl,
                                Model model) {
-        monumentService.saveMonument(nameMk, nameEn, city, region, municipality, suburb, longitude, latitude, address, Long.parseLong(id));
+        monumentService.saveMonument(nameMk, nameEn, city, region, municipality, suburb, longitude, latitude, address, Long.parseLong(id), imageUrl);
 
         return "redirect:/monuments";
     }

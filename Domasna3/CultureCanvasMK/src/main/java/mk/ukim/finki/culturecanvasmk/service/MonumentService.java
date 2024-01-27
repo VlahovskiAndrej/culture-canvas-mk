@@ -27,7 +27,7 @@ public interface MonumentService {
     List<Monument> filterByDistance(Double latFrom, Double lngFrom, Double distance);
 
     void deleteById(Long id);
-    void saveMonument(String nameMk, String nameEn, String city, String region, String municipality, String suburb, String longitude, String latitude, String address, long id);
+    void saveMonument(String nameMk, String nameEn, String city, String region, String municipality, String suburb, String longitude, String latitude, String address, long id, String imageUrl);
 
     void addReviewToMonument(Review review, Long monumentId);
     List<Review> listAllReviewsForMonument(Long id);

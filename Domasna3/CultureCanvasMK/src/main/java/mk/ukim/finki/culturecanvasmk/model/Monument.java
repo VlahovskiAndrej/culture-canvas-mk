@@ -24,11 +24,15 @@ public class Monument {
     private String longitude;
     private String latitude;
     private String address;
+    private String imageUrl;
+
+    @Column(length = 2048)
+    private String defaultUrl = "https://www.shutterstock.com/image-photo/aerial-view-samuels-fortress-plaosnik-260nw-1426740269.jpg";
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Review> reviews;
 
-    public Monument(String nameMk, String nameEn, String region, String city, String municipality, String postcode, String suburb, String latitude, String longitude, String address) {
+    public Monument(String nameMk, String nameEn, String region, String city, String municipality, String postcode, String suburb, String latitude, String longitude, String address, String imageUrl) {
         this.nameMk = nameMk;
         this.nameEn = nameEn;
         this.region = region;
@@ -40,6 +44,11 @@ public class Monument {
         this.latitude = latitude;
         this.address = address;
         this.reviews=new ArrayList<>();
+
+        if (imageUrl != null && !imageUrl.isEmpty())
+            this.imageUrl = imageUrl;
+        else
+            this.imageUrl = defaultUrl;
     }
 
     public Monument() {}

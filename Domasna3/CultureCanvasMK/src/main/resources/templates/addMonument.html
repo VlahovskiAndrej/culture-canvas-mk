@@ -68,6 +68,11 @@
                 <input class="form-control" type="text" th:name="address" th:value="${monument.getAddress()}">
             </div>
 
+            <div class="mb-3">
+                <label class="form-label">Image Url: </label>
+                <input class="form-control" type="text" th:name="imageUrl" th:value="${monument.getImageUrl()}">
+            </div>
+
             <button class="btn btn-primary" type="submit">Save Changes</button>
         </div>
     </form>
@@ -127,6 +132,11 @@
             <div class="mb-3">
                 <label class="form-label">Address: </label>
                 <input class="form-control" type="text" th:name="address">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Image Url: </label>
+                <input class="form-control" type="text" th:name="imageUrl">
             </div>
 
             <button class="btn btn-primary" type="submit">Add Monument</button>
