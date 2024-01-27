@@ -19,11 +19,11 @@ public class LoginController {
     }
 
     @GetMapping("/login")
-    public String getLoginPage(@RequestParam(required = false) String token, Model model){
-        if(token != null){
+    public String getLoginPage(@RequestParam(required = false) String token, Model model) {
+        if (token != null) {
             userService.confirmRegistration(token);
         }
-        model.addAttribute("bodyContent","login");
+        model.addAttribute("bodyContent", "login");
         return "master-template";
     }
 
@@ -33,32 +33,31 @@ public class LoginController {
         if (userService.checkUsernameAndPassword(username, password)) {
 
             User user = userService.findByUsernameAndPassword(username, password);
-            if(user.isRegistered()){
+            if (user.isRegistered()) {
                 session.setAttribute("username", username);
                 session.setAttribute("role", user.getRole().name());
 
-//            return "redirect:/monuments";
-                model.addAttribute("bodyContent","home");
+                model.addAttribute("bodyContent", "home");
                 return "master-template";
-            }else {
-                model.addAttribute("bodyContent","login");
+            } else {
+                model.addAttribute("bodyContent", "login");
                 return "master-template";
             }
         } else {
             model.addAttribute("error", "Invalid username or password");
 
-            model.addAttribute("bodyContent","login");
+            model.addAttribute("bodyContent", "login");
             return "master-template";
         }
 
     }
 
     @GetMapping("/logout")
-    public String Logout(HttpSession session, Model model){
+    public String Logout(HttpSession session, Model model) {
         session.setAttribute("username", "");
-        session.setAttribute("role","");
+        session.setAttribute("role", "");
 
-        model.addAttribute("bodyContent","login");
+        model.addAttribute("bodyContent", "login");
         return "master-template";
     }
 

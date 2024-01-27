@@ -36,7 +36,7 @@ public class MonumentController {
         model.addAttribute("role", role);
 
         Page<Monument> monumentsPage;
-        if (Objects.equals(city, "null") || city.isEmpty()) city="All";
+        if (Objects.equals(city, "null") || city.isEmpty()) city = "All";
 
         if (searchMonuments == null && Objects.equals(city, "All")) {
             monumentsPage = monumentService.listMonumentsPageable(PageRequest.of(page, size));
@@ -138,17 +138,17 @@ public class MonumentController {
     }
 
     @GetMapping("/{id}/delete")
-    public String deleteMonument(@PathVariable long id,HttpSession session, Model model){
+    public String deleteMonument(@PathVariable long id, HttpSession session, Model model) {
         monumentService.deleteById(id);
-        model.addAttribute("bodyContent","redirect:/monuments");
+        model.addAttribute("bodyContent", "redirect:/monuments");
         return "master-template";
     }
 
     @GetMapping("/{id}/edit")
-    public String getEditPage(@PathVariable long id, HttpSession session, Model model){
+    public String getEditPage(@PathVariable long id, HttpSession session, Model model) {
         model.addAttribute("monument", monumentService.findById(id));
 
-        model.addAttribute("bodyContent","addMonument");
+        model.addAttribute("bodyContent", "addMonument");
         return "master-template";
     }
 
@@ -163,22 +163,23 @@ public class MonumentController {
                                String latitude,
                                String address,
                                String id,
-                               Model model){
+                               Model model) {
         monumentService.saveMonument(nameMk, nameEn, city, region, municipality, suburb, longitude, latitude, address, Long.parseLong(id));
 
         return "redirect:/monuments";
     }
 
     @GetMapping("/add")
-    public String getAddPage(HttpSession session, Model model){
-        model.addAttribute("bodyContent","addMonument");
+    public String getAddPage(HttpSession session, Model model) {
+        model.addAttribute("bodyContent", "addMonument");
         return "master-template";
     }
+
     @PostMapping("/add_review/{monumentId}")
-    public String reviewBook(@PathVariable Long monumentId, Model model){
+    public String reviewBook(@PathVariable Long monumentId, Model model) {
         Monument monument = monumentService.findById(monumentId);
-        model.addAttribute("monument",monument);
-        model.addAttribute("bodyContent","monument-review");
+        model.addAttribute("monument", monument);
+        model.addAttribute("bodyContent", "monument-review");
         return "master-template";
     }
 

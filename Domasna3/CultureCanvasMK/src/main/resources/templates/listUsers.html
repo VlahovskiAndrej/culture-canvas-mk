@@ -20,12 +20,13 @@
         <li th:each="user : ${users}">
             <div class="card bg-light mb-3 w-100">
                 <div class="card-header">
-                    <h5 th:text="'Username: ' + ${user.getUsername()}" ></h5>
+                    <h5 th:text="'Username: ' + ${user.getUsername()}"></h5>
                 </div>
                 <div class="card-body">
                     <h5 th:text="'Role: ' + ${user.getRole()}"></h5>
                     <div>
-                        <form sec:authorize="hasRole('ROLE_ADMIN')" th:action="@{'/users/delete/{userId}' (userId=${user.getId()})}" th:method="POST">
+                        <form sec:authorize="hasRole('ROLE_ADMIN')"
+                              th:action="@{'/users/delete/{userId}' (userId=${user.getId()})}" th:method="POST">
                             <input class="btn btn-danger" type="submit" value="Delete account">
                         </form>
                     </div>

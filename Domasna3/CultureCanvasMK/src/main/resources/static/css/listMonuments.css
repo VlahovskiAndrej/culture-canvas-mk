@@ -46,3 +46,69 @@
     font-family: sans-serif ;
     font-weight: bolder;
 }
+
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 400px;
+    transition: transform 0.2s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card-text {
+    color: #495057;
+    margin-bottom: 10px;
+}
+
+.card-footer {
+    background-color: #f8f9fa;
+    padding: 0px;
+    border-top: 1px solid #dee2e6;
+}
+
+.row > .col-md-4:nth-child(even) .card, .row > .col-md-4:nth-child(even) .card-footer {
+    background-color: #f6f6f6;
+    border: 1px solid #ced5e0;
+}
+
+.row > .col-md-4:nth-child(odd) .card, .row > .col-md-4:nth-child(odd) .card-footer {
+    background-color: #fcfbea;
+    border: 1px solid #ced5e0;
+}
+
+.footer-buttons {
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-buttons button {
+    margin: 5px;
+}
+
+.rating-section {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.rating-label {
+    font-weight: bold;
+    margin: 0;
+}
+
+.rating-value {
+    font-size: 1.2rem;
+    color: #007bff;
+}
