@@ -28,8 +28,6 @@ public class Monument {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Review> reviews;
 
-
-
     public Monument(String nameMk, String nameEn, String region, String city, String municipality, String postcode, String suburb, String latitude, String longitude, String address) {
         this.nameMk = nameMk;
         this.nameEn = nameEn;
@@ -44,9 +42,7 @@ public class Monument {
         this.reviews=new ArrayList<>();
     }
 
-    public Monument() {
-
-    }
+    public Monument() {}
 
     public double getRating()
     {
