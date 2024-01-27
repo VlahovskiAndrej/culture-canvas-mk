@@ -14,3 +14,4 @@
 - проф. д-р Љупчо Антовски<br />
 - проф. д-р Петре Ламески<br />
 
+![alt text](https://github.com/VlahovskiAndrej/DIANS/blob/monument-images-impl/logo.png?raw=true)
