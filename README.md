@@ -14,4 +14,4 @@
 - проф. д-р Љупчо Антовски<br />
 - проф. д-р Петре Ламески<br />
 
-![alt text](https://github.com/VlahovskiAndrej/DIANS/blob/monument-images-impl/Domasna3/CultureCanvasMK/src/main/resources/static/images/logo.png?raw=true) | width=100
+![alt text](https://github.com/VlahovskiAndrej/DIANS/blob/monument-images-impl/Domasna3/CultureCanvasMK/src/main/resources/static/images/logo.png?raw=true)
