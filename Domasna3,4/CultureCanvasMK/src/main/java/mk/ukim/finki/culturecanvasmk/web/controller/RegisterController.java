@@ -4,7 +4,6 @@ import mk.ukim.finki.culturecanvasmk.model.ConfirmationRequest;
 import mk.ukim.finki.culturecanvasmk.model.ConfirmationTokenGenerator;
 import mk.ukim.finki.culturecanvasmk.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +26,7 @@ public class RegisterController {
     @GetMapping
     public String showRegistrationForm(Model model) {
         model.addAttribute("bodyContent","register");
-        return "master-template";
+        return "masterTemplate";
     }
 
     @PostMapping
@@ -40,13 +39,13 @@ public class RegisterController {
             // TODO: CHANGE URL AFTER HOSTING
             restTemplate.postForEntity("http://localhost:8080/confirmation/send-confirmation", confirmationRequest, String.class);
 
-            model.addAttribute("bodyContent","confirm-registration");
-            return "master-template";
+            model.addAttribute("bodyContent","confirmRegistration");
+            return "masterTemplate";
         }
 
         model.addAttribute("bodyContent","register");
         model.addAttribute("hasError", true);
         model.addAttribute("error", "The username already exists");
-        return "master-template";
+        return "masterTemplate";
     }
 }

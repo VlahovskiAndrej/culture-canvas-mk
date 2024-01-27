@@ -34,35 +34,45 @@
                         <p class="card-text" th:text="'Location: ' + ${monument.getAddress()}"></p>
                     </div>
                     <div class="card-footer">
-                        <div class="row footer-buttons">
-                            <form th:action="@{'/monuments/{id}' (id=${monument.getId()})}" th:method="GET">
-                                <button class="btn btn-secondary btn-sm" type="submit">Read more</button>
-                            </form>
 
-                            <form th:action="@{'/review/show/{monumentId}' (monumentId=${monument.getId()})}"
-                                  th:method="GET">
-                                <button class="btn btn-primary btn-sm" type="submit">Show Reviews</button>
-                            </form>
+                        <div class="row footer-buttons ">
+
+<!--                            <div style="display: inline">-->
+                                <form th:action="@{'/monuments/{id}' (id=${monument.getId()})}" th:method="GET" style="width: fit-content; display: inline-block;" >
+                                    <button class="btn btn-secondary btn-sm" type="submit" style="width: 105px">Read more</button>
+                                </form>
+<!--                            </div>-->
+
+<!--                            <div style="display: inline">-->
+                                <form th:action="@{'/review/show/{monumentId}' (monumentId=${monument.getId()})}"
+                                      th:method="GET" style="width: fit-content; display: inline-block;">
+                                    <button class="btn btn-primary btn-sm" type="submit" style="width: 105px">Show Reviews</button>
+                                </form>
+<!--                            </div>-->
                         </div>
+
                         <div class="row footer-buttons">
+
                             <form sec:authorize="hasRole('ROLE_ADMIN')"
                                   th:action="@{'/monuments/{id}/edit' (id=${monument.getId()})}"
-                                  th:method="GET">
-                                <button class="btn btn-primary btn-sm" type="submit">Edit</button>
+                                  th:method="GET" style="width: fit-content; display: inline-block;">
+                                <button class="btn btn-primary btn-sm" type="submit" style="width: 105px">Edit</button>
                             </form>
 
                             <form sec:authorize="hasRole('ROLE_ADMIN')"
                                   th:action="@{'/monuments/{id}/delete' (id=${monument.getId()})}"
-                                  th:method="GET">
-                                <button class="btn btn-danger btn-sm" type="submit">Delete</button>
+                                  th:method="GET" style="width: fit-content; display: inline-block;">
+                                <button class="btn btn-danger btn-sm" type="submit" style="width: 105px">Delete</button>
                             </form>
 
                             <form sec:authorize="hasRole('ROLE_USER')"
                                   th:action="@{'/monuments/add_review/{monumentId}' (monumentId=${monument.getId()})}"
-                                  th:method="POST">
-                                <button class="btn btn-primary btn-sm" type="submit">Add Review</button>
+                                  th:method="POST" style="width: fit-content; display: inline-block;">
+                                <button class="btn btn-primary btn-sm" type="submit" style="width: 105px">Add Review</button>
                             </form>
+
                         </div>
+
                     </div>
                     <div class="rating-section">
                         <p class="rating-label">Rating:

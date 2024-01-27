@@ -1,13 +1,10 @@
 package mk.ukim.finki.culturecanvasmk.web.controller;
 
 import jakarta.servlet.http.HttpSession;
-import mk.ukim.finki.culturecanvasmk.model.Monument;
 import mk.ukim.finki.culturecanvasmk.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Objects;
 
 @Controller
 @RequestMapping("/users")
@@ -23,7 +20,7 @@ public class UserController {
     public String getUsersPage(HttpSession session, Model model){
         model.addAttribute("users", userService.listUsers());
         model.addAttribute("bodyContent", "listUsers");
-        return "master-template";
+        return "masterTemplate";
     }
 
     @PostMapping("/delete/{userId}")

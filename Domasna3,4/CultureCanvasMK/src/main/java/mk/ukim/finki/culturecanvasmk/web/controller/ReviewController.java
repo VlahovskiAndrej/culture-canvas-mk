@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Objects;
 
 @Controller
 @RequestMapping("/review")
@@ -40,7 +39,7 @@ public class ReviewController {
         model.addAttribute("monument",monument);
         model.addAttribute("reviews",reviews);
         model.addAttribute("bodyContent", "listReviews");
-        return "master-template";
+        return "masterTemplate";
 
     }
     @PostMapping("/delete/{monumentId}")

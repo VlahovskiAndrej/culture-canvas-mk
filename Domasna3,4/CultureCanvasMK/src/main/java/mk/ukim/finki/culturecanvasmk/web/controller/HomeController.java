@@ -13,23 +13,23 @@ public class HomeController {
     @GetMapping
     public String getHomePage(Model model) {
         model.addAttribute("bodyContent", "home");
-        return "master-template";
+        return "masterTemplate";
     }
 
     @GetMapping("/about")
     public String getAboutPage(Model model) {
         model.addAttribute("bodyContent", "about");
-        return "master-template";
+        return "masterTemplate";
     }
 
     @GetMapping("/contact")
     public String getContactPage(Model model) {
         model.addAttribute("bodyContent", "contact");
-        return "master-template";
+        return "masterTemplate";
     }
     @PostMapping("/contact")
     public String sendEmail(Model model) {
         model.addAttribute("bodyContent", "contact");
-        return "master-template";
+        return "masterTemplate";
     }
 }

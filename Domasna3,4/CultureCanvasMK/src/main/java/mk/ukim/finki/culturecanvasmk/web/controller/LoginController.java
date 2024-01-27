@@ -24,7 +24,7 @@ public class LoginController {
             userService.confirmRegistration(token);
         }
         model.addAttribute("bodyContent", "login");
-        return "master-template";
+        return "masterTemplate";
     }
 
     @PostMapping("/login")
@@ -38,16 +38,16 @@ public class LoginController {
                 session.setAttribute("role", user.getRole().name());
 
                 model.addAttribute("bodyContent", "home");
-                return "master-template";
+                return "masterTemplate";
             } else {
                 model.addAttribute("bodyContent", "login");
-                return "master-template";
+                return "masterTemplate";
             }
         } else {
             model.addAttribute("error", "Invalid username or password");
 
             model.addAttribute("bodyContent", "login");
-            return "master-template";
+            return "masterTemplate";
         }
 
     }
@@ -58,7 +58,7 @@ public class LoginController {
         session.setAttribute("role", "");
 
         model.addAttribute("bodyContent", "login");
-        return "master-template";
+        return "masterTemplate";
     }
 
 }

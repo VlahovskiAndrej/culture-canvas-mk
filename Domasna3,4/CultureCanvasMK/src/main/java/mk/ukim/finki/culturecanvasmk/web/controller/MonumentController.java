@@ -49,7 +49,7 @@ public class MonumentController {
         model.addAttribute("currentPage", page);
 
         model.addAttribute("bodyContent", "listMonuments");
-        return "master-template";
+        return "masterTemplate";
     }
 
     @GetMapping("/{id}")
@@ -60,14 +60,14 @@ public class MonumentController {
             throw new MonumentNotFoundException(id);
         model.addAttribute("monument", monument.get());
         model.addAttribute("bodyContent", "monumentDetails");
-        return "master-template";
+        return "masterTemplate";
     }
 
     @GetMapping("/map")
     public String getMap(Model model) {
         model.addAttribute("monuments", monumentService.listAllPlaces());
-        model.addAttribute("bodyContent", "osm");
-        return "master-template";
+        model.addAttribute("bodyContent", "map");
+        return "masterTemplate";
     }
 
     @PostMapping("/map")
@@ -110,7 +110,7 @@ public class MonumentController {
         model.addAttribute("monument", monumentService.findById(id));
 
         model.addAttribute("bodyContent", "addMonument");
-        return "master-template";
+        return "masterTemplate";
     }
 
     @PostMapping("/save")
@@ -133,15 +133,15 @@ public class MonumentController {
     @GetMapping("/add")
     public String getAddPage(HttpSession session, Model model) {
         model.addAttribute("bodyContent", "addMonument");
-        return "master-template";
+        return "masterTemplate";
     }
 
     @PostMapping("/add_review/{monumentId}")
     public String reviewBook(@PathVariable Long monumentId, Model model) {
         Monument monument = monumentService.findById(monumentId);
         model.addAttribute("monument", monument);
-        model.addAttribute("bodyContent", "monument-review");
-        return "master-template";
+        model.addAttribute("bodyContent", "addReview");
+        return "masterTemplate";
     }
 
 }
