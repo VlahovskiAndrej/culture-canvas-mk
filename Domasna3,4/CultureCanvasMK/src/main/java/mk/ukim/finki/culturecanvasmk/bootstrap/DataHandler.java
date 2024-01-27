@@ -35,6 +35,10 @@ public class DataHandler {
 //    CREATES ADMIN
 //    username: admin
 //    password: admin
+
+//    CREATES USER
+//    username: user
+//    password: user
     @PostConstruct
     public void init() {
         csvData = readCsvFile();
@@ -47,6 +51,14 @@ public class DataHandler {
                     Role.ADMIN, "");
             user.setRegistered(true);
             userRepository.save(user);
+
+            User user2 = new User("user",
+                    passwordEncoder.encode("user"),
+                    "culturecanvasmk@gmail.com",
+                    Role.USER, "");
+            user2.setRegistered(true);
+            userRepository.save(user2);
+
         }
     }
 //  Reads the monuments from data.csv into Database

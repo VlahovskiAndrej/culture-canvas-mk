@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/css/monumentReview.css">
-    <!-- Assuming your CSS file is in the correct path -->
-
-    <title>Review</title>
+    <script src="/scripts/monumentReview.js"></script>
+    <title>CultureCanvas | Add Review</title>
 </head>
-<body>
 
 <div class="container">
     <form th:action="@{'/review/add/{monumentId}' (monumentId = ${monument.getId()})}" th:method="POST">
@@ -35,25 +27,3 @@
     </form>
 </div>
 
-<script>
-    function updateStars() {
-        const rating = document.querySelector('input[name="score"]:checked').value;
-        const stars = document.querySelectorAll('.rating label');
-
-        stars.forEach((star, index) => {
-            star.classList.remove('bi-star');
-        });
-
-        stars.forEach((star, index) => {
-            if (index < rating) {
-                star.classList.add('bi-star-fill');
-            } else {
-                star.classList.add('bi-star');
-            }
-        });
-
-    }
-</script>
-
-</body>
-</html>
