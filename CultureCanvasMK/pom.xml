@@ -14,9 +14,9 @@
     <packaging>jar</packaging>
     <name>CultureCanvasMK</name>
     <description>CultureCanvasMK</description>
-    <properties>
-        <java.version>19</java.version>
-    </properties>
+<!--    <properties>-->
+<!--        <java.version>19</java.version>-->
+<!--    </properties>-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
