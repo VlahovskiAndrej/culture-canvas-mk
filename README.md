@@ -5,7 +5,7 @@
 -  https://culturecanvas-abbbfc3fc458.herokuapp.com/
 
 **Линк кон видео за функционалности на апликацијата:** <br  />
--  https://www.youtube.com/watch?v=rhmVZQelGs4
+-  https://www.youtube.com/watch?v=x9Flo-r_cmQ
 
 **Автори:**<br />
 - Андреј Влаховски (211136)<br /> 
