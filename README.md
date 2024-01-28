@@ -2,6 +2,9 @@
 # Дизајн и архитектура на софтвер
 
 Линк кон видео за функционалности на апликацијата: <br  />
+-  https://culturecanvas-abbbfc3fc458.herokuapp.com/
+
+Линк кон видео за функционалности на апликацијата: <br  />
 -  https://www.youtube.com/watch?v=rhmVZQelGs4
 
 Автори:<br />
