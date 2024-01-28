@@ -37,7 +37,7 @@ public class RegisterController {
                     ConfirmationTokenGenerator.BASE_URL + token);
 
             // TODO: CHANGE URL AFTER HOSTING
-            restTemplate.postForEntity("https://service-culturecanvas-2fb0fafc5950.herokuapp.com/confirmation/send-confirmation", confirmationRequest, String.class);
+            restTemplate.postForEntity("https://mail-service-f59e920d0ef7.herokuapp.com/confirmation/send-confirmation", confirmationRequest, String.class);
 
             model.addAttribute("bodyContent","confirmRegistration");
             return "masterTemplate";
