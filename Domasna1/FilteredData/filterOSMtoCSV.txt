@@ -1,4 +1,0 @@
-osmfilter exportedData.osm --keep="tourism=museum or historic or memorial" | osmconvert64 - --all-to-nodes
---csv="@id @lon @lat name name:mk name:en int_name addr:city addr:housenumber addr:postcode addr:street phone contact:phone 
-opening_hours fee operator website historic memorial wikipedia" --csv-headline --csv-separator=","
--o="nasledstvo.csv"
