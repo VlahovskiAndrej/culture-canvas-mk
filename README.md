@@ -1,5 +1,5 @@
 ![alt text](https://github.com/VlahovskiAndrej/DIANS/blob/main/Domasna3,4/CultureCanvasMK/src/main/resources/static/images/cc.webp?raw=true&&size=100x100) 
-# Дизајн и архитектура на софтвер
+# Culture Canvas
 
 **Линк до апликацијата:**<br  />
 -  https://culturecanvas-abbbfc3fc458.herokuapp.com/
